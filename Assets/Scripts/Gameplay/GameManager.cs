@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Level Mode")]
     public bool g_normalMode;
-    [SerializeField] private int _maxScore;
-    [SerializeField] private int _timeLimit;
+    public int g_maxScore;
+    public float g_timeLimit;
 
     [Header("Game State")]
     public bool g_isGameStarted;
@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour
     [Header ("Music Calculations")]
     [SerializeField] private float _BPM;
     [SerializeField] private float _BPS;
-    
-    [Range(0f, 1f)]
-    [SerializeField] private float _EarlyOffsetToBeat = 0f;
-    [Range(0f, 1f)]
-    [SerializeField] private float _LateOffsetToBeat = 0f;
+
+    //[Range(0f, 1f)]
+    //[SerializeField] private float _EarlyOffsetToBeat = 0f;
+    //[Range(0f, 1f)]
+    //[SerializeField] private float _LateOffsetToBeat = 0f;
 
     //Beat Variables
     //[HideInInspector] public float g_beatEarly;

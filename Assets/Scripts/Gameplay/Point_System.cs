@@ -37,8 +37,9 @@ public class Point_System : MonoBehaviour
 
     private void ShowScore()
     {
-        ScoreText.text = "Score\n" + _overallPoints.ToString();
+        ScoreText.text = string.Format("Score\n{0:00}", _overallPoints);
     }
 
-    //Save Score
+    //Save Score When Game Ended
+
 }
