@@ -4,7 +4,7 @@ using TMPro;
 
 public class Timer_Global : MonoBehaviour
 {
-    public Text UI_TEXT; //Debug Comment / Remove if Finish
+    //public Text UI_TEXT; //Debug Comment / Remove if Finish
 
     //Class Instance
     public static Timer_Global Instance;
@@ -60,7 +60,7 @@ public class Timer_Global : MonoBehaviour
             g_openPlatform = false; //Close
         }
 
-        UI_TEXT.text = Instance.g_timer.ToString();
+        //UI_TEXT.text = Instance.g_timer.ToString();
     }
 
     void CountDownTimer()
