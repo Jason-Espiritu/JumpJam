@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager GMInstance;
-
+    //This came from the Main Repo Branch
     [Header("Game Level Mode")]
     public bool g_normalMode;
     public int g_maxScore;
