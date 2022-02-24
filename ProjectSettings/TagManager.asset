@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Lvl Selection Layer
+    uniqueID: 3212622081
+    locked: 0

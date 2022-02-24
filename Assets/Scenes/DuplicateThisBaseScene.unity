@@ -4094,6 +4094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GM: {fileID: 370967556}
+  PlayerAnimator: {fileID: 0}
   _speedMultiplier: 0
   _jumpForce: 22
   _fallMultiplier: 5
