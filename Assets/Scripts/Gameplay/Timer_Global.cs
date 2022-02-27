@@ -14,7 +14,9 @@ public class Timer_Global : MonoBehaviour
     [SerializeField] private TMP_Text CountDown;
     [SerializeField] private float _countdownTimer;
 
-    private float g_timer;
+    private float _timer;
+
+    [HideInInspector] public float g_timeLeft;
     
     //Public Variable/s
     public bool g_openPlatform;
@@ -39,23 +41,26 @@ public class Timer_Global : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GM.g_isGameStarted && !GM.g_isGameEnded)
+        if (GM.g_isGameStarted)
         {
             StartRunningPlatforms();
-            CountDownTimer();
+            if (!GM.g_isGameEnded)
+            {
+                CountDownTimer();
+            }
         }
     }
 
     void StartRunningPlatforms()
     {
-        g_timer += Time.deltaTime;
-        if (g_timer >= GM.g_BPS)
+        _timer += Time.deltaTime;
+        if (_timer >= GM.g_BPS)
         {
             g_openPlatform = true; //Open
-            g_timer = 0f;
+            _timer = 0f;
 
         }
-        else if (g_timer >= (GM.g_BPS / 2f))
+        else if (_timer >= (GM.g_BPS / 2f))
         {
             g_openPlatform = false; //Close
         }
@@ -75,7 +80,9 @@ public class Timer_Global : MonoBehaviour
         else
         {
             //Execute End Function
-            CountDown.text = "GameEnded"; //Comment or Remove when Done
+            //CountDown.text = "GameEnded"; //Comment or Remove when Done
+            g_timeLeft = _countdownTimer;    //
+            GM.g_isGameEnded = true;
         }
     }
 

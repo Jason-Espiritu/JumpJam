@@ -42,20 +42,23 @@ public class Player_Script : MonoBehaviour
 
     public void Jump()
     {
-        if (GroundCheck())
+        if (!GM.g_isGameEnded) // If Game is Ended... It can't jump anymore
         {
-            _playerRigidBody.velocity = Vector2.up * _jumpForce;
-            _isJumping = true;
+            if (GroundCheck())
+            {
+                _playerRigidBody.velocity = Vector2.up * _jumpForce;
+                _isJumping = true;
 
-            PlayerAnimator.SetBool("Jumping", true); // Execute Jump Anim
-        }
+                PlayerAnimator.SetBool("Jumping", true); // Execute Jump Anim
+            }
 
-        //Starts the Game when the Player pressed Jump
-        if(!GM.g_isGameStarted && !AudioManager.instance.MusicSource.isPlaying)
-        {
-            AudioManager.instance.MusicSource.time = 0.7f;
-            AudioManager.instance.MusicSource.Play();
-            GM.g_isGameStarted = true;
+            //Starts the Game when the Player pressed Jump
+            if(!GM.g_isGameStarted && !AudioManager.instance.MusicSource.isPlaying)
+            {
+                AudioManager.instance.MusicSource.time = 0.7f;
+                AudioManager.instance.MusicSource.Play();
+                GM.g_isGameStarted = true;
+            }
         }
     }
     private bool GroundCheck()

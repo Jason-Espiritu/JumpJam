@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager GMInstance;
     //This came from the Main Repo Branch
     [Header("Game Level Mode")]
+    public string g_GameLevelID;
     public bool g_normalMode;
     public int g_maxScore;
     public float g_timeLimit;

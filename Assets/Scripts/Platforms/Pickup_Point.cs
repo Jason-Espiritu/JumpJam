@@ -19,7 +19,8 @@ public class Pickup_Point : MonoBehaviour
             if (_isFinish)
             {
                 //Execute Result Screen Function
-                Debug.Log("Game Finished");
+                //Debug.Log("Game Finished");
+                GameManager.GMInstance.g_isGameEnded = true;
             }
             Debug.Log("+1");
             Point_System.PSinsttance.AddPoint();    
