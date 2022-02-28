@@ -81,9 +81,15 @@ public class Timer_Global : MonoBehaviour
         {
             //Execute End Function
             //CountDown.text = "GameEnded"; //Comment or Remove when Done
-            g_timeLeft = _countdownTimer;    //
             GM.g_isGameEnded = true;
+            _countdownTimer = 0;
+            DisplayTimer(_countdownTimer);
         }
+    }
+
+    public int GetTimeLeft()
+    {
+        return Mathf.FloorToInt(_countdownTimer % 60);
     }
 
     private void DisplayTimer(float deltaTime)

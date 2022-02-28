@@ -5,6 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager GMInstance;
+
+    private Timer_Global TimeLeft;
+    private Point_System Points;
+
     //This came from the Main Repo Branch
     [Header("Game Level Mode")]
     public string g_GameLevelID;
@@ -20,14 +24,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _BPM;
     [SerializeField] private float _BPS;
 
-    //[Range(0f, 1f)]
-    //[SerializeField] private float _EarlyOffsetToBeat = 0f;
-    //[Range(0f, 1f)]
-    //[SerializeField] private float _LateOffsetToBeat = 0f;
-
-    //Beat Variables
-    //[HideInInspector] public float g_beatEarly;
-    //[HideInInspector] public float g_beatLate;
     [HideInInspector] public float g_BPS;
 
     public float g_BPM_Multiplier;
@@ -51,24 +47,22 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        TimeLeft = GetComponent<Timer_Global>();
+        Points = GetComponent<Point_System>();
+
         //BPS Calculation
         _BPS = _BPMConstant / _BPM;
         g_BPS = _BPS;
 
         //BPM Multiplier Calculation 60 BPM is standard since it's 1 Beat per Second
+        //This is for the Physics Calculation for the Player.
         g_BPM_Multiplier = _BPM / _BPMConstant;
-
-        //Offset Calculation
-        //g_beatEarly = _BPS - _EarlyOffsetToBeat;
-        //g_beatLate = _BPS + _LateOffsetToBeat;
-        
-        //Debug.Log(_EarlyOffsetToBeat + " <- " + _BPS + " -> " + _LateOffsetToBeat);
 
     }
 
     // Update is called once per frame
     private void Update()
     {
-        
+
     }
 }

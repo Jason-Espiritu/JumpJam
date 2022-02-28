@@ -23,7 +23,7 @@ public class Pickup_Point : MonoBehaviour
                 GameManager.GMInstance.g_isGameEnded = true;
             }
             Debug.Log("+1");
-            Point_System.PSinsttance.AddPoint();    
+            Point_System.PSinstance.AddPoint();    
             Destroy(gameObject); //uncomment if done debugging
         }
     }

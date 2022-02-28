@@ -5,8 +5,7 @@ using TMPro;
 
 public class Point_System : MonoBehaviour
 {
-    public static Point_System PSinsttance;
-    private GameManager GameMngr;
+    public static Point_System PSinstance;
 
     [SerializeField] private TMP_Text ScoreText;
 
@@ -16,9 +15,9 @@ public class Point_System : MonoBehaviour
     [HideInInspector] public int g_score; 
     private void Awake()
     {
-        if (PSinsttance == null)
+        if (PSinstance == null)
         {
-            PSinsttance = this;
+            PSinstance = this;
         }
         else
         {
@@ -35,7 +34,6 @@ public class Point_System : MonoBehaviour
     {
         _overallPoints += _multiplier * 1;
         ShowScore();
-        publishScore();
     }
 
     private void ShowScore()
@@ -44,11 +42,8 @@ public class Point_System : MonoBehaviour
     }
 
     //Save Score When Game Ended
-    void publishScore()
+    public int GetScore()
     {
-        if (GameMngr.g_isGameEnded)
-        {
-            g_score = _overallPoints;
-        }
+        return _overallPoints;
     }
 }

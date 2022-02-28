@@ -20,14 +20,9 @@ public class EndGame : MonoBehaviour
     //Current
     private int _currentHighScore;
     private int _currentTimeLeft;
-
-    //Final Score
-    private int _finalHighScore;
-    private int _finalTimeLeft;
-
-    //This is to know if it is a HighScore or not.
-    private bool _newHighScore;
-    private bool _newTimeLeft;
+    private int _starReward;
+    private bool _saveIt;
+    //This is to know if the Play is Perfect.
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +46,10 @@ public class EndGame : MonoBehaviour
     {
         if (GameMngr.g_isGameEnded && !_GameEndProcessed)
         {
+            // Get Current Score
+            _currentHighScore = Points.GetScore();
+            _currentTimeLeft = TimeLimit.GetTimeLeft();
+
             StartCoroutine(CalculateScores(1f));
             _GameEndProcessed = true;
         }
@@ -62,36 +61,86 @@ public class EndGame : MonoBehaviour
         GameMngr.g_isGameStarted = false;
         Debug.Log("Game Finished");
 
-        // Get Current Score
-        
-        // Compare Scores
+        //Reveal Scores
 
-        // Reveal Scores
+        // Check if Score is a HighScore
+        if (IsNewHighScore())
+        {
+            if (IsPerfect())
+            {
+                Debug.Log("Perfect Score");
+            }
+            Debug.Log("New High Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
+            
+            _saveIt = true; // Let the Game Save the Score and Star Reward
+        }
+        else
+        {
+            Debug.Log("Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
+        }
 
+        //Process Star Rewards
+        _starReward = StarRewards();
+        switch (_starReward)
+        {
+            case 1:  // 1 Stars
+                Debug.Log("1 Star");
+                break;
+            case 2:  // 2 Stars
+                Debug.Log("2 Star");
+                break;
+            case 3:  // 3 Stars / Perfect
+                Debug.Log("3 Star");
+                break;
+            default: // No Star
+                Debug.Log("0 Star");
+                break;
+        }
+        //Save Scores
+        SaveNewScores();
     }
-    void ScoreComparison()
+
+    void SaveNewScores()
     {
-        // Get Current Score
-        _currentHighScore = Points.g_score;
-        _currentTimeLeft = Mathf.FloorToInt(TimeLimit.g_timeLeft % 60f);
+        if (_saveIt)
+        {
+            Debug.LogError("Scores Saved");
+        }
+    }
+
+    bool IsPerfect()
+    {
+        //Check if Result is Perfect
+        int PerfectScore = GameMngr.g_maxScore;
+        int PerfectTimeLeft = Mathf.FloorToInt((GameMngr.g_timeLimit - (GameMngr.g_maxScore * GameMngr.g_BPS)) % 60f);
+        if (_currentHighScore == PerfectScore && _currentTimeLeft == PerfectTimeLeft)
+        {
+            return true;
+        }
+        return false;
+    }
+    bool IsNewHighScore()
+    {
 
         if (IsThereSavedScore())
         {
-            if (_currentHighScore > _savedHighScore)
+            if (_currentHighScore == _savedHighScore)
             {
-                //Set New High Score
-                _newHighScore = true;
-                _finalHighScore = _currentHighScore;
-            }
-
-            if (_newHighScore)
-            {
-                if (_currentTimeLeft > _savedTimeLeft)
+                if(_currentTimeLeft > _savedTimeLeft)
                 {
-
+                   return true; // New High Score because Time is Better even if Score is Equal
                 }
             }
+            else if (_currentHighScore > _savedHighScore)
+            {
+                return true; // New High Score because Score is Better
+            }
+            else
+            {
+                return false;
+            }
         }
+        return true; // New High Score because There is no Score saved
     }
     bool IsThereSavedScore()
     {
@@ -100,5 +149,22 @@ public class EndGame : MonoBehaviour
             return true;
         }
         return false;
+    }
+    int StarRewards()
+    {
+        float _pointsPercentage = (float)_currentHighScore / (float)GameMngr.g_maxScore;
+        Debug.Log(_pointsPercentage.ToString());
+        if (_pointsPercentage > 0.0f && _pointsPercentage <= 0.5f) // 1 Star = 1% - 50% of Max Score
+        {
+            return 1;
+        }else if (_pointsPercentage > 0.5f && _pointsPercentage <= 1f && !IsPerfect())
+        {
+            return 2;
+        }else if (IsPerfect())
+        {
+            return 3;
+        }
+
+        return 0;
     }
 }
