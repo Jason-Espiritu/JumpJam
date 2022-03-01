@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 278166214}
   - component: {fileID: 278166213}
   - component: {fileID: 278166215}
+  - component: {fileID: 278166216}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -737,6 +738,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollbar: {fileID: 110643511}
+--- !u!114 &278166216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278166211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3075bbd26f9eb04caa6f1b9e1e813bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  g_starsobtained: 0
 --- !u!1 &693364519
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,13 +16,17 @@ public class EndGame : MonoBehaviour
     //Saved HighScore and Lowest time from
     private int _savedHighScore;
     private int _savedTimeLeft;
+    private int _savedStarReward;
     
     //Current
     private int _currentHighScore;
     private int _currentTimeLeft;
     private int _starReward;
     private bool _saveIt;
-    //This is to know if the Play is Perfect.
+    //This to create a standard name for the Level.
+    private string _highScoreLevelName;
+    private string _timeLeftLevelName;
+    private string _starRewardLevelName;
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +37,17 @@ public class EndGame : MonoBehaviour
 
         _gameLevelID = GameMngr.g_GameLevelID;
 
+        //Recompile Full Name of Level
+        _highScoreLevelName = "Level_" + _gameLevelID + "_HighScore";
+        _timeLeftLevelName = "Level_" + _gameLevelID + "_TimeLeft";
+        _starRewardLevelName = "Level_" + _gameLevelID + "_Star";
+
         //Load HighScore
         if (IsThereSavedScore())
         {
-            _savedHighScore = PlayerPrefs.GetInt("highscore" + _gameLevelID);
-            _savedTimeLeft = PlayerPrefs.GetInt("lowesttime" + _gameLevelID);
+            _savedHighScore = PlayerPrefs.GetInt(_highScoreLevelName);
+            _savedTimeLeft = PlayerPrefs.GetInt(_timeLeftLevelName);
+            _savedStarReward = PlayerPrefs.GetInt(_starRewardLevelName);
         }
     }
 
@@ -63,13 +73,17 @@ public class EndGame : MonoBehaviour
 
         //Reveal Scores
 
+        //Check if Score is Perfect
+        if (IsPerfect())
+        {
+            //Show Perfect Score
+            Debug.Log("Perfect Score");
+        }
+
         // Check if Score is a HighScore
         if (IsNewHighScore())
         {
-            if (IsPerfect())
-            {
-                Debug.Log("Perfect Score");
-            }
+            //Show Best Record
             Debug.Log("New High Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
             
             _saveIt = true; // Let the Game Save the Score and Star Reward
@@ -83,16 +97,16 @@ public class EndGame : MonoBehaviour
         _starReward = StarRewards();
         switch (_starReward)
         {
-            case 1:  // 1 Stars
+            case 1:  //Show 1 Stars
                 Debug.Log("1 Star");
                 break;
-            case 2:  // 2 Stars
+            case 2:  //Show 2 Stars
                 Debug.Log("2 Star");
                 break;
-            case 3:  // 3 Stars / Perfect
+            case 3:  //Show 3 Stars / Perfect
                 Debug.Log("3 Star");
                 break;
-            default: // No Star
+            default: //Show No Star
                 Debug.Log("0 Star");
                 break;
         }
@@ -104,7 +118,16 @@ public class EndGame : MonoBehaviour
     {
         if (_saveIt)
         {
-            Debug.LogError("Scores Saved");
+            //Recalculate and Save in total stars.
+            CalculateTotalStars();
+            //Save Highscore
+            PlayerPrefs.SetInt(_highScoreLevelName, _currentHighScore);
+            //Save Time Left
+            PlayerPrefs.SetInt(_timeLeftLevelName, _currentTimeLeft);
+            //Save Star Accomplishment
+            PlayerPrefs.SetInt(_starRewardLevelName, _starReward);
+            Debug.Log("Scores Saved");
+            _saveIt = false;
         }
     }
 
@@ -144,7 +167,7 @@ public class EndGame : MonoBehaviour
     }
     bool IsThereSavedScore()
     {
-        if (PlayerPrefs.GetInt("HighScore" + _gameLevelID) > 0)
+        if (PlayerPrefs.GetInt("Level_"  + _gameLevelID +  "_HighScore") > 0)
         {
             return true;
         }
@@ -166,5 +189,19 @@ public class EndGame : MonoBehaviour
         }
 
         return 0;
+    }
+
+    void CalculateTotalStars()
+    {
+        //Get Total Stars
+        int totalstars = PlayerPrefs.GetInt("TotalStars");
+        //Compare Current and Saved Star Rewards to see if there is a difference
+        int starDifference = _starReward - _savedStarReward;
+        if (starDifference > 0)
+        {
+            //Add Positive Difference to Total Stars
+            totalstars += starDifference;
+            //PlayerPrefs.SetInt("TotalStars", totalstars); //Uncomment if done
+        }
     }
 }
