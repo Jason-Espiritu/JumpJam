@@ -10,7 +10,17 @@ public class ShowStars : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        _starsObtainedPerLevel = PlayerPrefs.GetInt("StarofLevel_" + LevelID);
+        //Get total Stars of a Level
+        _starsObtainedPerLevel = PlayerPrefs.GetInt("Level_" + LevelID + "-1_Star") + PlayerPrefs.GetInt("Level_" + LevelID + "-2_Star");
+        //Show the Stars
+        RevealStars();
     }
     
+    void RevealStars()
+    {
+        for (int Star = 0; Star < _starsObtainedPerLevel; Star++)
+        {
+            Stars[Star].SetActive(true);
+        }
+    }
 }

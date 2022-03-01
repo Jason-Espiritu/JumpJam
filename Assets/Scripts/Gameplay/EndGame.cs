@@ -126,7 +126,7 @@ public class EndGame : MonoBehaviour
             PlayerPrefs.SetInt(_timeLeftLevelName, _currentTimeLeft);
             //Save Star Accomplishment
             PlayerPrefs.SetInt(_starRewardLevelName, _starReward);
-            Debug.Log("Scores Saved");
+            //Debug.Log("Scores Saved Total Stars = " + PlayerPrefs.GetInt("TotalStars"));
             _saveIt = false;
         }
     }
@@ -201,7 +201,16 @@ public class EndGame : MonoBehaviour
         {
             //Add Positive Difference to Total Stars
             totalstars += starDifference;
-            //PlayerPrefs.SetInt("TotalStars", totalstars); //Uncomment if done
+            PlayerPrefs.SetInt("TotalStars", totalstars); //Uncomment if done
+            Debug.Log("Saved");
         }
+    }
+
+    // NOTE THIS IS FOR DEBUG ONLY DONT USE UNLESS YOU KNOW WHAT YOU ARE DOING
+    [ContextMenu("Delete All Player Prefs")]
+    void DeleteData()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.LogError("ALL DATA DELETED");
     }
 }
