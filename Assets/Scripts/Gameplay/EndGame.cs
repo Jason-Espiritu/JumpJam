@@ -8,7 +8,9 @@ public class EndGame : MonoBehaviour
     [SerializeField] GameObject ResultsScreen;
     [SerializeField] TMP_Text LabelScore;
     [SerializeField] TMP_Text LabelTimeLeft;
-    [SerializeField] TMP_Text LabelBestResult;
+    [SerializeField] TMP_Text LabelStatus;
+    [SerializeField] GameObject[] Stars;
+
     [SerializeField] float DelayInSeconds;
     private GameManager GameMngr;
     private Point_System Points;
@@ -79,11 +81,13 @@ public class EndGame : MonoBehaviour
         //Reveal Scores
         ResultsScreen.SetActive(true);
 
+        _starReward = StarRewards();
         //Check if Score is Perfect
         if (IsPerfect())
         {
             //Show Perfect Score
             Debug.Log("Perfect Score");
+            LabelStatus.text = "Perfect!";
         }
 
         // Check if Score is a HighScore
@@ -91,32 +95,32 @@ public class EndGame : MonoBehaviour
         {
             //Show Best Record
             Debug.Log("New High Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
-            
+            if (IsPerfect())
+            {
+                LabelStatus.text += " and Best Record!"; //Adds in the Perfect
+            }
+            else
+            {
+                LabelStatus.text = "Best Record!";
+            }
+            LabelScore.text = string.Format("{0:00}", _currentHighScore);
+            LabelTimeLeft.text = string.Format("{0:00}", _currentTimeLeft);
             _saveIt = true; // Let the Game Save the Score and Star Reward
         }
         else
         {
             Debug.Log("Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
+            LabelScore.text = string.Format("{0:00}", _currentHighScore);
+            LabelTimeLeft.text = string.Format("{0:00}", _currentTimeLeft);
         }
 
-        //Process Star Rewards
-        _starReward = StarRewards();
-        switch (_starReward)
+        //Show Star Rewards
+        for (int grant = 0; grant < _starReward; grant++)
         {
-            case 1:  //Show 1 Stars
-                Debug.Log("1 Star");
-                break;
-            case 2:  //Show 2 Stars
-                Debug.Log("2 Star");
-                break;
-            case 3:  //Show 3 Stars / Perfect
-                Debug.Log("3 Star");
-                break;
-            default: //Show No Star
-                Debug.Log("0 Star");
-                break;
+            Stars[grant].SetActive(true);
         }
-        //Save Scores
+
+        //Save Scorest
         SaveNewScores();
     }
 
@@ -158,6 +162,10 @@ public class EndGame : MonoBehaviour
                 if(_currentTimeLeft > _savedTimeLeft)
                 {
                    return true; // New High Score because Time is Better even if Score is Equal
+                }
+                else
+                {
+                    return false;
                 }
             }
             else if (_currentHighScore > _savedHighScore)
