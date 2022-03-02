@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: 5bdf0d1f09287b44fa624b130c120cae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1883544262393935759
+    second: Walk_CakeIsland_0
+  - first:
+      213: 619442857707302960
+    second: Walk_CakeIsland_1
+  - first:
+      213: -5369222190945729744
+    second: Walk_CakeIsland_2
+  - first:
+      213: 2403441326342817872
+    second: Walk_CakeIsland_3
+  - first:
+      213: -6479930393393177498
+    second: Walk_CakeIsland_4
+  - first:
+      213: -8363146050511979588
+    second: Walk_CakeIsland_5
+  - first:
+      213: 704494567211562750
+    second: Walk_CakeIsland_6
+  - first:
+      213: -2681363193680863055
+    second: Walk_CakeIsland_7
+  - first:
+      213: -4809168138066236794
+    second: Walk_CakeIsland_8
+  - first:
+      213: 5109606436480470957
+    second: Walk_CakeIsland_9
+  - first:
+      213: -4730838262703548733
+    second: Walk_CakeIsland_10
+  - first:
+      213: 8895834463664419375
+    second: Walk_CakeIsland_11
+  - first:
+      213: 8339849892209528964
+    second: Walk_CakeIsland_12
+  - first:
+      213: 5631487478032264428
+    second: Walk_CakeIsland_13
+  - first:
+      213: 5438779554995497295
+    second: Walk_CakeIsland_14
+  - first:
+      213: -5200715291138383123
+    second: Walk_CakeIsland_15
+  - first:
+      213: -3585114219341023935
+    second: Walk_CakeIsland_16
+  - first:
+      213: 5148828151998521151
+    second: Walk_CakeIsland_17
+  - first:
+      213: -7828958388558211195
+    second: Walk_CakeIsland_18
+  - first:
+      213: -4051034338880649975
+    second: Walk_CakeIsland_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Walk_CakeIsland_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1362
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8737b6f681b32a10800000000000000
+      internalID: 1883544262393935759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_1
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1362
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030fb444ff3b89800800000000000000
+      internalID: 619442857707302960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_2
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1362
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033098c5dd0bc75b0800000000000000
+      internalID: -5369222190945729744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_3
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 1362
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058482ff62dba5120800000000000000
+      internalID: 2403441326342817872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_4
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 1362
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66cda8ca3a9a216a0800000000000000
+      internalID: -6479930393393177498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 908
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbbb5861af220fb80800000000000000
+      internalID: -8363146050511979588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_6
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 908
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef676d8831ed6c900800000000000000
+      internalID: 704494567211562750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_7
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 908
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b068deb162e9cad0800000000000000
+      internalID: -2681363193680863055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_8
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 908
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a6f69fe07624db0800000000000000
+      internalID: -4809168138066236794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_9
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 908
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafc77c6bf7f8e640800000000000000
+      internalID: 5109606436480470957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c69ab54aafa85eb0800000000000000
+      internalID: -4730838262703548733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 454
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f223563005a547b70800000000000000
+      internalID: 8895834463664419375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_12
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 454
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4809a316a491db370800000000000000
+      internalID: 8339849892209528964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_13
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 454
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec6c2d3600172e40800000000000000
+      internalID: 5631487478032264428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_14
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 454
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49e92b703d6a7b40800000000000000
+      internalID: 5438779554995497295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de221cd4ff853d7b0800000000000000
+      internalID: -5200715291138383123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_16
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145f9fcbc9d1f3ec0800000000000000
+      internalID: -3585114219341023935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_17
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f1761bcef447740800000000000000
+      internalID: 5148828151998521151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_18
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5875ca043d3f95390800000000000000
+      internalID: -7828958388558211195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_CakeIsland_19
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 416
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9050c1a6bb5d7c7c0800000000000000
+      internalID: -4051034338880649975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
