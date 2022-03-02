@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EndGame : MonoBehaviour
 {
+    [SerializeField] GameObject ResultsScreen;
+    [SerializeField] TMP_Text LabelScore;
+    [SerializeField] TMP_Text LabelTimeLeft;
+    [SerializeField] TMP_Text LabelBestResult;
     [SerializeField] float DelayInSeconds;
     private GameManager GameMngr;
     private Point_System Points;
@@ -72,6 +77,7 @@ public class EndGame : MonoBehaviour
         Debug.Log("Game Finished");
 
         //Reveal Scores
+        ResultsScreen.SetActive(true);
 
         //Check if Score is Perfect
         if (IsPerfect())

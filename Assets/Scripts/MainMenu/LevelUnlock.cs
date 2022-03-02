@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelUnlock : MonoBehaviour
 {
     //[SerializeField] private GameObject[] Levels; //Uncomment if implemented
-    //public int g_starsobtained;
+    [SerializeField] private TMP_Text TotalStars; //Uncomment if implemented
+
+    //public int g_starsobtained; // comment this line if done testing
+
     private int _obtainedStars;
     // Start is called before the first frame update
     void Awake()
@@ -17,6 +21,8 @@ public class LevelUnlock : MonoBehaviour
     private void Start()
     {
         UnlockedLevels(_obtainedStars);
+        //Show Total Stars Obtained
+        //TotalStars.text = string.Format("{0:00}", _obtainedStars); //Uncomment if implemented
     }
 
     void UnlockedLevels(int totalStars)
