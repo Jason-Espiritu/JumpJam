@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PauseButton : MonoBehaviour
 {
@@ -9,19 +8,22 @@ public class PauseButton : MonoBehaviour
     bool _isGamePaused;
     public void Pause()
     {
-        if (!_isGamePaused)
+        if (!GameManager.GMInstance.g_isGameEnded)
         {
-            Time.timeScale = 0f;
-            _isGamePaused = true;
-            //Reveal Pause Screen
-            ScreenPaused.gameObject.SetActive(true);
+            if (!_isGamePaused)
+            {
+                Time.timeScale = 0f;
+                _isGamePaused = true;
+                //Reveal Pause Screen
+                ScreenPaused.enabled = true;
 
-        }
-        else
-        {
-            ScreenPaused.gameObject.SetActive(false);
-            _isGamePaused = false;
-            Time.timeScale = 1f;
+            }
+            else
+            {
+                ScreenPaused.enabled = false;
+                _isGamePaused = false;
+                Time.timeScale = 1f;
+            }
         }
     }
 }

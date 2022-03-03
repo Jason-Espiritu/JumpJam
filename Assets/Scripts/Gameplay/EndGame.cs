@@ -5,7 +5,7 @@ using TMPro;
 
 public class EndGame : MonoBehaviour
 {
-    [SerializeField] GameObject ResultsScreen;
+    [SerializeField] Canvas ResultsScreen;
     [SerializeField] TMP_Text LabelScore;
     [SerializeField] TMP_Text LabelTimeLeft;
     [SerializeField] TMP_Text LabelStatus;
@@ -79,7 +79,7 @@ public class EndGame : MonoBehaviour
         Debug.Log("Game Finished");
 
         //Reveal Scores
-        ResultsScreen.SetActive(true);
+        ResultsScreen.enabled = true;
 
         _starReward = StarRewards();
         //Check if Score is Perfect
@@ -140,7 +140,6 @@ public class EndGame : MonoBehaviour
             _saveIt = false;
         }
     }
-
     bool IsPerfect()
     {
         //Check if Result is Perfect
@@ -154,7 +153,6 @@ public class EndGame : MonoBehaviour
     }
     bool IsNewHighScore()
     {
-
         if (IsThereSavedScore())
         {
             if (_currentHighScore == _savedHighScore)
@@ -204,7 +202,6 @@ public class EndGame : MonoBehaviour
 
         return 0;
     }
-
     void CalculateTotalStars()
     {
         //Get Total Stars
