@@ -8,6 +8,9 @@ public class Settings : MonoBehaviour
 {
     [SerializeField] TMP_Dropdown resolution;
     [SerializeField] Toggle isFullScreenMode;
+    [SerializeField] Slider masterAudio;
+    [SerializeField] Slider musicAudio;
+    [SerializeField] Slider sfxAudio;
     Canvas settingScreen;
 
     //Resolution Width and Height
@@ -23,6 +26,7 @@ public class Settings : MonoBehaviour
     }
     void Start()
     {
+        //Load Resolution Settings
         settingScreen = GetComponent<Canvas>();
         resolution.value = _resolutionIndx;
         if (fullScreenMode == 0)
@@ -33,6 +37,8 @@ public class Settings : MonoBehaviour
         {
             isFullScreenMode.isOn = false;
         }
+        //Load Volume Settings
+        
     }
 
     public void Back()
@@ -49,7 +55,6 @@ public class Settings : MonoBehaviour
 
     public void SaveSettings()
     {
-
+        
     }
-
 }
