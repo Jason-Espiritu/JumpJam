@@ -45,6 +45,11 @@ public class PauseScreen : MonoBehaviour
     }
     void ConfirmRestart()
     {
+        //Checks if the Whole Game is still Paused
+        if(Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+        }
         //Restart the Stage
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
