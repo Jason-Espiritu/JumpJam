@@ -1216,7 +1216,7 @@ GameObject:
   - component: {fileID: 1066972206}
   - component: {fileID: 1066972210}
   m_Layer: 5
-  m_Name: blank btn
+  m_Name: quit btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2326,7 +2326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: blank
+  m_text: Quit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 450a418cf9cd2e7418b6fb28ecafcb56, type: 2}
   m_sharedMaterial: {fileID: -3067864653233774905, guid: 450a418cf9cd2e7418b6fb28ecafcb56, type: 2}
