@@ -893,6 +893,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 708598103}
     m_Modifications:
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_margin.z
+      value: -223.66483
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.41960788
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4285256447
+      objectReference: {fileID: 0}
     - target: {fileID: 724882047240489997, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontSize
       value: 15
@@ -926,8 +946,24 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 724882048084062520, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.124955505
+      objectReference: {fileID: 0}
+    - target: {fileID: 724882048084062520, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.72080815
+      objectReference: {fileID: 0}
+    - target: {fileID: 724882048084062520, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 724882048084062520, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontSizeBase
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 724882048084062520, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280334586
       objectReference: {fileID: 0}
     - target: {fileID: 724882048084062521, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_Pivot.x
@@ -1016,6 +1052,14 @@ PrefabInstance:
     - target: {fileID: 724882048084062522, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_Name
       value: 'Storyboard title '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541374486652488098, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 203
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541374486652488098, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
