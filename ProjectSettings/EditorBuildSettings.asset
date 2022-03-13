@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/DuplicateThisBaseScene.unity
-    guid: 16801e657a1eb2a4393fbd2eb5f32498
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Gaming Scene.unity
     guid: 4fbbde0b675e6d245955532c81926f5d
