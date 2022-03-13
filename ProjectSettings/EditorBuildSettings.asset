@@ -33,11 +33,20 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Parkour Guy.unity
+    guid: 877030b76ecff434c9311ae75a7cffa9
+  - enabled: 1
+    path: Assets/Scenes/Rhythm Bot.unity
+    guid: 48f448868dd3d6b4ab9a0e02e3493612
+  - enabled: 1
     path: Assets/Scenes/Oasis.unity
     guid: f659fd975f588a9488fa315f4a439bfb
   - enabled: 1
     path: Assets/Scenes/MiDi-val.unity
     guid: 36cc55622cbc87c42936dcdbc1335109
+  - enabled: 1
+    path: Assets/Scenes/FrostLand.unity
+    guid: 5ee72148af98e724883914c25dce78d9
   - enabled: 1
     path: Assets/Scenes/Level 1 Astro-Beat.unity
     guid: 6c7631b1463dca34ebe7584146cb3eed
