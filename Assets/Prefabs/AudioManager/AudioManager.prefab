@@ -59,11 +59,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 477a7cf1249b0da43b2fa9bb56775a79, type: 3}
   - {fileID: 8300000, guid: 267a0562368421345b5308f4c853e2ab, type: 3}
   - {fileID: 8300000, guid: 0ba0fe5080f00ce47aee7a253ae7f7af, type: 3}
+  - {fileID: 8300000, guid: d00f73cdf2d580a4893e291756d6c1a1, type: 3}
   SFXSource: {fileID: 7318316361577489096}
   SFXClips:
   - {fileID: 8300000, guid: 54650898c1445564695b4dc43a45e57f, type: 3}
   - {fileID: 8300000, guid: 1f95b17af5f85874ba071df2853e2280, type: 3}
   - {fileID: 8300000, guid: d21209d62d1fcf648b38a6a0807e4a94, type: 3}
+  - {fileID: 8300000, guid: e1b71ef473c156243aa15d55cf95cdda, type: 3}
+  - {fileID: 8300000, guid: e4c8a2dc0c5c62e48bf405998ae343b5, type: 3}
 --- !u!1 &7318316361571302841
 GameObject:
   m_ObjectHideFlags: 0

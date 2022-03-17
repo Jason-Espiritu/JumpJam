@@ -49,6 +49,7 @@ public class Player_Script : MonoBehaviour
                 _playerRigidBody.velocity = Vector2.up * _jumpForce;
                 _isJumping = true;
 
+                //PlaySFX(); // Plays Jump sfx *Not being used due to no good sfx
                 PlayerAnimator.SetBool("Jumping", true); // Execute Jump Anim
             }
 
@@ -96,5 +97,9 @@ public class Player_Script : MonoBehaviour
             PlayerAnimator.SetBool("Falling", true); //Play Falling Animation
             PlayerAnimator.SetBool("Jumping", false);
         }
+    }
+
+    void PlaySFX(){
+        AudioManager.instance.PlaySFX(3);
     }
 }

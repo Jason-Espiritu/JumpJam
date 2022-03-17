@@ -6,6 +6,12 @@ using TMPro;
 
 public class EndGameTutor : MonoBehaviour
 {
+    [Header("Dialouge Controllers")]
+    [SerializeField] private int _finalDialogueSetIndex;
+    [SerializeField] DialogueCaller DialogueCaller;
+    [SerializeField] Dialogue_System Dialogue_System;
+    
+    [Header("Scorring System")]
     [SerializeField] Canvas ResultsScreen;
     [SerializeField] TMP_Text LabelScore;
     [SerializeField] TMP_Text LabelTimeLeft;
@@ -77,7 +83,11 @@ public class EndGameTutor : MonoBehaviour
     {
         yield return new WaitForSeconds(delayInSeconds);
         GameMngr.g_isGameStarted = false;
-        Debug.Log("Game Finished");
+        //Debug.Log("Game Finished");
+
+        //Play Dialogue
+        DialogueCaller.PlayDialogue(_finalDialogueSetIndex);
+        yield return new WaitUntil(Dialogue_System.IsDialogueFinished);
 
         //Reveal Scores
         ResultsScreen.enabled = true;
@@ -87,7 +97,7 @@ public class EndGameTutor : MonoBehaviour
         if (IsPerfect())
         {
             //Show Perfect Score
-            Debug.Log("Perfect Score");
+            //Debug.Log("Perfect Score");
             LabelStatus.text = "Perfect!";
         }
 
@@ -95,7 +105,7 @@ public class EndGameTutor : MonoBehaviour
         if (IsNewHighScore())
         {
             //Show Best Record
-            Debug.Log("New High Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
+            //Debug.Log("New High Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
             if (IsPerfect())
             {
                 LabelStatus.text += " and Best Record!"; //Adds in the Perfect
@@ -110,7 +120,7 @@ public class EndGameTutor : MonoBehaviour
         }
         else
         {
-            Debug.Log("Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
+            //Debug.Log("Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
             LabelScore.text = string.Format("{0:00}", _currentHighScore);
             LabelTimeLeft.text = string.Format("{0:00}", _currentTimeLeft);
         }
@@ -123,6 +133,12 @@ public class EndGameTutor : MonoBehaviour
 
         //Save Scorest
         SaveNewScores();
+
+        //Save if HardMode is Finished
+        IsHardModePlayed();
+
+        //Slowly Stop the BGM
+        StartCoroutine(AudioManager.instance.FadeOut(10f));
     }
 
     void SaveNewScores()
@@ -146,7 +162,7 @@ public class EndGameTutor : MonoBehaviour
         //Check if Result is Perfect
         int PerfectScore = GameMngr.g_maxScore;
         int PerfectTimeLeft = Mathf.FloorToInt((GameMngr.g_timeLimit - (GameMngr.g_maxScore * GameMngr.g_BPS)) % 60f);
-        Debug.Log(PerfectTimeLeft);
+        //Debug.Log(PerfectTimeLeft);
         if (_currentHighScore == PerfectScore && _currentTimeLeft >= PerfectTimeLeft)
         {
             return true;
@@ -190,7 +206,7 @@ public class EndGameTutor : MonoBehaviour
     int StarRewards()
     {
         float _pointsPercentage = (float)_currentHighScore / (float)GameMngr.g_maxScore;
-        Debug.Log(_pointsPercentage.ToString());
+        //Debug.Log(_pointsPercentage.ToString());
         if (_pointsPercentage > 0.0f && _pointsPercentage <= 0.5f) // 1 Star = 1% - 50% of Max Score
         {
             return 3;
@@ -215,15 +231,15 @@ public class EndGameTutor : MonoBehaviour
             //Add Positive Difference to Total Stars
             totalstars += starDifference;
             PlayerPrefs.SetInt("TotalStars", totalstars); //Uncomment if done
-            Debug.Log("Saved");
+            //Debug.Log("Saved");
         }
     }
 
-    // NOTE THIS IS FOR DEBUG ONLY DONT USE UNLESS YOU KNOW WHAT YOU ARE DOING
-    [ContextMenu("Delete All Player Prefs")]
-    void DeleteData()
-    {
-        PlayerPrefs.DeleteAll();
-        Debug.LogError("ALL DATA DELETED");
+    //Save if HardModeTutorial is Played
+    void IsHardModePlayed(){
+        if(!GameMngr.g_normalMode){
+            PlayerPrefs.SetInt("HardTutor?", 1);
+            Debug.Log("Hard Mode Saved");
+        }
     }
 }

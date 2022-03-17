@@ -77,7 +77,7 @@ public class EndGame : MonoBehaviour
     {
         yield return new WaitForSeconds(delayInSeconds);
         GameMngr.g_isGameStarted = false;
-        Debug.Log("Game Finished");
+        //Debug.Log("Game Finished");
 
         //Reveal Scores
         ResultsScreen.enabled = true;
@@ -87,7 +87,7 @@ public class EndGame : MonoBehaviour
         if (IsPerfect())
         {
             //Show Perfect Score
-            Debug.Log("Perfect Score");
+            //Debug.Log("Perfect Score");
             LabelStatus.text = "Perfect!";
         }
 
@@ -95,7 +95,7 @@ public class EndGame : MonoBehaviour
         if (IsNewHighScore())
         {
             //Show Best Record
-            Debug.Log("New High Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
+            //Debug.Log("New High Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
             if (IsPerfect())
             {
                 LabelStatus.text += " and Best Record!"; //Adds in the Perfect
@@ -110,7 +110,7 @@ public class EndGame : MonoBehaviour
         }
         else
         {
-            Debug.Log("Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
+            //Debug.Log("Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
             LabelScore.text = string.Format("{0:00}", _currentHighScore);
             LabelTimeLeft.text = string.Format("{0:00}", _currentTimeLeft);
         }
@@ -123,6 +123,9 @@ public class EndGame : MonoBehaviour
 
         //Save Scorest
         SaveNewScores();
+
+        //Slowly Stop the BGM
+        StartCoroutine(AudioManager.instance.FadeOut(10f));
     }
 
     void SaveNewScores()
@@ -215,15 +218,7 @@ public class EndGame : MonoBehaviour
             //Add Positive Difference to Total Stars
             totalstars += starDifference;
             PlayerPrefs.SetInt("TotalStars", totalstars); //Uncomment if done
-            Debug.Log("Saved");
+            //Debug.Log("Saved");
         }
-    }
-
-    // NOTE THIS IS FOR DEBUG ONLY DONT USE UNLESS YOU KNOW WHAT YOU ARE DOING
-    [ContextMenu("Delete All Player Prefs")]
-    void DeleteData()
-    {
-        PlayerPrefs.DeleteAll();
-        Debug.LogError("ALL DATA DELETED");
     }
 }

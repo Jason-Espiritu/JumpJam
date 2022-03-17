@@ -81,9 +81,9 @@ public class Settings : MonoBehaviour
     }
 
     void LoadAudioSettings(){
-        _masterAudio.value = PlayerPrefs.GetFloat(SettingNames.masterVolume);
-        _musicAudio.value = PlayerPrefs.GetFloat(SettingNames.musicVolume);
-        _sfxAudio.value = PlayerPrefs.GetFloat(SettingNames.sfxVolume);
+        _masterAudio.value = PlayerPrefs.GetFloat(SettingNames.masterVolume, 0.5f);
+        _musicAudio.value = PlayerPrefs.GetFloat(SettingNames.musicVolume, 1f);
+        _sfxAudio.value = PlayerPrefs.GetFloat(SettingNames.sfxVolume, 1f);
     }
 
     //Save and Quit Settings Screen

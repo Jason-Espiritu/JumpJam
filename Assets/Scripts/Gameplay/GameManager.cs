@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        AudioManager.instance.PauseorStopMusic(true);
     }
 
     void Start()

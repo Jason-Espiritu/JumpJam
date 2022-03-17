@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pixode intro.unity
     guid: eda29984dcf858a49895464a29db87b5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Start Scene.unity
     guid: cd5bd481bb9a9ab49b285fd7d05cb2b9
   - enabled: 1
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 0/Level 0 - N.unity
     guid: 9281d1de39056eb4d888f4b2c9465934
+  - enabled: 1
+    path: Assets/Scenes/Level 0/Level 0 - H.unity
+    guid: 170d63ed759d5894db496675882367c6
   - enabled: 1
     path: Assets/Scenes/Level 1/Pengie.unity
     guid: afc1535b801f9784880c6b401959d487

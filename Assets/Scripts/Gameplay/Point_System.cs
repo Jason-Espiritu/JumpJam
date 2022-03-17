@@ -34,11 +34,16 @@ public class Point_System : MonoBehaviour
     {
         _overallPoints += _multiplier * 1;
         ShowScore();
+        //PlaySFX(); //Not being used due to no appropriate sfx
     }
 
     private void ShowScore()
     {
         ScoreText.text = string.Format("Score\n{0:00}", _overallPoints);
+    }
+
+    void PlaySFX(){
+        AudioManager.instance.PlaySFX(4);
     }
 
     //Save Score When Game Ended

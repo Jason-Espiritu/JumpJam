@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39484f96506133d46b58fcf80a040d79, type: 3}
+  m_Name: Hard Start Dialogue
+  m_EditorClassIdentifier: 
+  _sentences:
+  - Hey! Heyyyy!!!
+  - I need your help again! The platforms don't stop anymore.
+  - It seems like we can't stop on a platform for too long like we did last time!
+  - The music, beat, and everything are the same.
+  - only the platforms have changed!
+  - Whatever you do, don't stop jumping!
+  - ... In sync with the music of course.
