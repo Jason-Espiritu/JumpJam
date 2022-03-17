@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 3071394461084646180}
   - component: {fileID: 6799799185083433931}
   - component: {fileID: 3382032114422312680}
+  - component: {fileID: 7784283849972285298}
   m_Layer: 5
   m_Name: Apply
   m_TagString: Untagged
@@ -504,6 +505,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2794291236903142973}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: PlaySoundFX
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7784283849972285298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274553812120253646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2794291236903142973}
+          m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+          m_MethodName: PlaySoundFX
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4368004842032293057
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +692,7 @@ GameObject:
   - component: {fileID: 4669911912995078121}
   - component: {fileID: 4669911912995078120}
   - component: {fileID: 4669911912995078127}
+  - component: {fileID: 5426552493649538987}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -771,6 +814,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2794291236903142973}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: PlaySoundFX
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5426552493649538987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4669911912995078125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2794291236903142973}
+          m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+          m_MethodName: PlaySoundFX
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4669911913020423561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,7 +1744,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4669911913244755733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,6 +1780,8 @@ MonoBehaviour:
   _masterAudio: {fileID: 4669911914585011668}
   _musicAudio: {fileID: 4669911914198457472}
   _sfxAudio: {fileID: 4669911914552168964}
+  _backButton: {fileID: 0}
+  _applyButton: {fileID: 0}
 --- !u!1 &4669911913285161835
 GameObject:
   m_ObjectHideFlags: 0

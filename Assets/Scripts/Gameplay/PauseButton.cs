@@ -12,6 +12,8 @@ public class PauseButton : MonoBehaviour
         {
             if (!_isGamePaused)
             {
+                //Pause Audio
+                AudioManager.instance.PauseorStopMusic(false);
                 Time.timeScale = 0f;
                 _isGamePaused = true;
                 //Reveal Pause Screen
@@ -22,6 +24,8 @@ public class PauseButton : MonoBehaviour
             {
                 ScreenPaused.enabled = false;
                 _isGamePaused = false;
+                //Resume Audio
+                AudioManager.instance.PauseorStopMusic(false);
                 Time.timeScale = 1f;
             }
         }

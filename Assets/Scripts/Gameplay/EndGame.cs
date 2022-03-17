@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class EndGame : MonoBehaviour
@@ -9,7 +10,7 @@ public class EndGame : MonoBehaviour
     [SerializeField] TMP_Text LabelScore;
     [SerializeField] TMP_Text LabelTimeLeft;
     [SerializeField] TMP_Text LabelStatus;
-    [SerializeField] GameObject[] Stars;
+    [SerializeField] Image[] Stars;
 
     [SerializeField] float DelayInSeconds;
     private GameManager GameMngr;
@@ -117,7 +118,7 @@ public class EndGame : MonoBehaviour
         //Show Star Rewards
         for (int grant = 0; grant < _starReward; grant++)
         {
-            Stars[grant].SetActive(true);
+            Stars[grant].enabled = true;
         }
 
         //Save Scorest
@@ -145,7 +146,8 @@ public class EndGame : MonoBehaviour
         //Check if Result is Perfect
         int PerfectScore = GameMngr.g_maxScore;
         int PerfectTimeLeft = Mathf.FloorToInt((GameMngr.g_timeLimit - (GameMngr.g_maxScore * GameMngr.g_BPS)) % 60f);
-        if (_currentHighScore == PerfectScore && _currentTimeLeft == PerfectTimeLeft)
+        Debug.Log(PerfectTimeLeft);
+        if (_currentHighScore == PerfectScore && _currentTimeLeft >= PerfectTimeLeft)
         {
             return true;
         }

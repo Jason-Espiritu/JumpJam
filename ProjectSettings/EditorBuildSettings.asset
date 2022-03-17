@@ -5,64 +5,109 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Gaming Scene.unity
-    guid: 4fbbde0b675e6d245955532c81926f5d
-  - enabled: 1
-    path: Assets/Scenes/Lobby.unity
-    guid: e6be58a61d5594f4e9a0d5a8d3d7906a
-  - enabled: 1
-    path: Assets/Scenes/Level 1 info Scene.unity
-    guid: afc1535b801f9784880c6b401959d487
-  - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: a8608a003c16d904dbfcd5c1bdc5c4c6
-  - enabled: 1
-    path: Assets/Scenes/Level Selection.unity
-    guid: 2365bf9a4981a104baf53f0133baeedf
   - enabled: 1
     path: Assets/Scenes/Pixode intro.unity
     guid: eda29984dcf858a49895464a29db87b5
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Parkour Guy.unity
-    guid: 877030b76ecff434c9311ae75a7cffa9
-  - enabled: 1
-    path: Assets/Scenes/Rhythm Bot.unity
-    guid: 48f448868dd3d6b4ab9a0e02e3493612
-  - enabled: 1
-    path: Assets/Scenes/Oasis.unity
-    guid: f659fd975f588a9488fa315f4a439bfb
-  - enabled: 1
-    path: Assets/Scenes/MiDi-val.unity
-    guid: 36cc55622cbc87c42936dcdbc1335109
-  - enabled: 1
-    path: Assets/Scenes/FrostLand.unity
-    guid: 5ee72148af98e724883914c25dce78d9
-  - enabled: 1
-    path: Assets/Scenes/Level 1 Astro-Beat.unity
-    guid: 6c7631b1463dca34ebe7584146cb3eed
-  - enabled: 1
-    path: Assets/Scenes/Dessert Isle.unity
-    guid: 8b79165d9478a1545985c01e888abe68
   - enabled: 1
     path: Assets/Scenes/Start Scene.unity
     guid: cd5bd481bb9a9ab49b285fd7d05cb2b9
   - enabled: 1
-    path: Assets/Scenes/TESTSCENE.unity
-    guid: 959d9609b70776c409b5eaca43b11af3
+    path: Assets/Scenes/Lobby.unity
+    guid: e6be58a61d5594f4e9a0d5a8d3d7906a
   - enabled: 1
-    path: Assets/Scenes/Boy Scout.unity
+    path: Assets/Scenes/Level Selection.unity
+    guid: 2365bf9a4981a104baf53f0133baeedf
+  - enabled: 1
+    path: Assets/Scenes/Level 0/Level 0 - N.unity
+    guid: 9281d1de39056eb4d888f4b2c9465934
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Pengie.unity
+    guid: afc1535b801f9784880c6b401959d487
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Level 1 - N.unity
+    guid: 9ebed8b6f56437e478b7cf23e12afbfd
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Level 1 - H.unity
+    guid: 4793e9c25f733bf4785a8beed34feed2
+  - enabled: 1
+    path: Assets/Scenes/Level 2/Oasis.unity
+    guid: f659fd975f588a9488fa315f4a439bfb
+  - enabled: 1
+    path: Assets/Scenes/Level 2/Level 2 - N.unity
+    guid: 8bf21dfb176e5ab48af50782a776889a
+  - enabled: 1
+    path: Assets/Scenes/Level 2/Level 2 - H.unity
+    guid: 81c9195db6407e947bda875b8e51c6a9
+  - enabled: 1
+    path: Assets/Scenes/Level 3/Boy Scout.unity
     guid: 56c24979aadc21c47abc1dee54993cb5
   - enabled: 1
-    path: Assets/Scenes/Ninja.unity
+    path: Assets/Scenes/Level 3/Level 3 - N.unity
+    guid: 3dd160120129bba42b8616647ae1d0f0
+  - enabled: 1
+    path: Assets/Scenes/Level 3/Level 3 - H.unity
+    guid: 8f11a88d3102e1a48a53e58478d0cd29
+  - enabled: 1
+    path: Assets/Scenes/Level 4/FrostLand.unity
+    guid: 5ee72148af98e724883914c25dce78d9
+  - enabled: 1
+    path: Assets/Scenes/Level 4/Level 4 - N.unity
+    guid: 8952453f2f6bb5d408b56109cb08045c
+  - enabled: 1
+    path: Assets/Scenes/Level 4/Level 4 - H.unity
+    guid: c1ba1072c7c711440b88061341123961
+  - enabled: 1
+    path: Assets/Scenes/Level 5/Dessert Isle.unity
+    guid: 8b79165d9478a1545985c01e888abe68
+  - enabled: 1
+    path: Assets/Scenes/Level 5/Level 5 - N.unity
+    guid: 1c5e71c311df4104c8217f7c74a265be
+  - enabled: 1
+    path: Assets/Scenes/Level 5/Level 5 - H.unity
+    guid: 8444821ca56f15d47a9d0614cfe1e03a
+  - enabled: 1
+    path: Assets/Scenes/Level 6/midi-val.unity
+    guid: 36cc55622cbc87c42936dcdbc1335109
+  - enabled: 1
+    path: Assets/Scenes/Level 6/Level 6 - N.unity
+    guid: 837ea24a9a04d074e83e97c0801eb02c
+  - enabled: 1
+    path: Assets/Scenes/Level 6/Level 6 - H.unity
+    guid: 36a7a7f35631ef747ae6493cb74d866c
+  - enabled: 1
+    path: Assets/Scenes/Level 7/Astro-Beat.unity
+    guid: 6c7631b1463dca34ebe7584146cb3eed
+  - enabled: 1
+    path: Assets/Scenes/Level 7/Level 7 - N.unity
+    guid: a8608a003c16d904dbfcd5c1bdc5c4c6
+  - enabled: 1
+    path: Assets/Scenes/Level 7/Level 7 - H.unity
+    guid: e9f1b2789c4a546488f1248d58019026
+  - enabled: 1
+    path: Assets/Scenes/Level 8/Rhythm Bot.unity
+    guid: 48f448868dd3d6b4ab9a0e02e3493612
+  - enabled: 1
+    path: Assets/Scenes/Level 8/Level 8 - N.unity
+    guid: 6f7f25de16675a34b927470365589292
+  - enabled: 1
+    path: Assets/Scenes/Level 8/Level 8 - H.unity
+    guid: 20367d2ea2da30646bbfa857c04ca718
+  - enabled: 1
+    path: Assets/Scenes/Level 9/Ninja.unity
     guid: 1d6cc1d585838ac4ca79e6cd68f9a936
+  - enabled: 1
+    path: Assets/Scenes/Level 9/Level 9 - N.unity
+    guid: af532a7116cc5994ba135db4c1767d40
+  - enabled: 1
+    path: Assets/Scenes/Level 9/Level 9 - H.unity
+    guid: 9227741c7765bc34e8194e736d32a251
+  - enabled: 1
+    path: Assets/Scenes/Level 10/Parkour Guy.unity
+    guid: 877030b76ecff434c9311ae75a7cffa9
+  - enabled: 1
+    path: Assets/Scenes/Level 10/Level 10 - N.unity
+    guid: 873ccd502b4323541bee933f93386a37
+  - enabled: 1
+    path: Assets/Scenes/Level 10/Level 10 - H.unity
+    guid: c5e7793203e563f43aa5e6becbf61854
   m_configObjects: {}

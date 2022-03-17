@@ -30,6 +30,9 @@ public class PauseScreen : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+        //Stop Audio
+        AudioManager.instance.PauseorStopMusic(true);
+
         //Go Back to Level Selection
         SceneManager.LoadScene("Level Selection");
     }
@@ -50,6 +53,9 @@ public class PauseScreen : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+        //Stop Audio
+        AudioManager.instance.PauseorStopMusic(true);
+
         //Restart the Stage
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

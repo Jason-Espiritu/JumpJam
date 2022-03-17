@@ -89,12 +89,12 @@ public class Timer_Global : MonoBehaviour
 
     public int GetTimeLeft()
     {
-        return Mathf.FloorToInt(_countdownTimer % 60);
+        return Mathf.FloorToInt(_countdownTimer);
     }
 
     private void DisplayTimer(float deltaTime)
     {
-        float seconds = Mathf.FloorToInt(deltaTime % 60f);
+        float seconds = Mathf.FloorToInt(deltaTime);
         CountDown.text = string.Format("Time\n{0:00}", seconds);
     }
 }

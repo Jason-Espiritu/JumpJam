@@ -89,8 +89,8 @@ public class Platform_Script : MonoBehaviour
     {
         if (situation)
         {
-            _cornerRect1 = new Vector2(_platformCollisionBox.position.x - 1.5f, _platformCollisionBox.position.y);
-            _cornerRect2 = new Vector2(_platformCollisionBox.position.x + 1.5f, _platformCollisionBox.position.y + 1f);
+            _cornerRect1 = new Vector2(_platformCollisionBox.position.x - 1f, _platformCollisionBox.position.y + 0.2f);
+            _cornerRect2 = new Vector2(_platformCollisionBox.position.x + 1f, _platformCollisionBox.position.y + 1f);
             
             Collider2D playercheck = Physics2D.OverlapArea(_cornerRect1, _cornerRect2, _playerLayer);
             if (playercheck != null)

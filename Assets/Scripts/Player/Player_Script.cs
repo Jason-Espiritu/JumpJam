@@ -53,10 +53,8 @@ public class Player_Script : MonoBehaviour
             }
 
             //Starts the Game when the Player pressed Jump
-            if(!GM.g_isGameStarted && !AudioManager.instance.MusicSource.isPlaying)
+            if(!GM.g_isGameStarted)
             {
-                AudioManager.instance.MusicSource.time = 0.7f;
-                AudioManager.instance.MusicSource.Play();
                 GM.g_isGameStarted = true;
             }
         }

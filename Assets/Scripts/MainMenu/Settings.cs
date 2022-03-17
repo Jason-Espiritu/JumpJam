@@ -12,6 +12,7 @@ public class Settings : MonoBehaviour
     [SerializeField] Slider _masterAudio;
     [SerializeField] Slider _musicAudio;
     [SerializeField] Slider _sfxAudio;
+
     Canvas settingScreen;
 
     //Resolution Setting
@@ -106,5 +107,9 @@ public class Settings : MonoBehaviour
     }
     public void ShowHideSettings(bool value){
         settingScreen.enabled = value;
+    }
+
+    public void PlaySoundFX(int sfxID){
+        AudioManager.instance.PlaySFX(sfxID);
     }
 }

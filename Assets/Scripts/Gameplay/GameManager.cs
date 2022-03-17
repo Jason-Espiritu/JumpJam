@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     //This came from the Main Repo Branch
     [Header("Game Level Mode")]
     public string g_GameLevelID;
+    public int _musicID;
     public bool g_normalMode;
     public int g_maxScore;
     public float g_timeLimit;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     [Header ("Music Calculations")]
     [SerializeField] private float _BPM;
     [SerializeField] private float _BPS;
+    [SerializeField] private float _musicOffset;
 
     [HideInInspector] public float g_BPS;
 
@@ -58,11 +60,23 @@ public class GameManager : MonoBehaviour
         //This is for the Physics Calculation for the Player.
         g_BPM_Multiplier = _BPM / _BPMConstant;
 
+        //Reset AudioManager Pause Variable
+        AudioManager.instance.GameRestarted();
     }
 
     // Update is called once per frame
+    private bool _isMusicAlreadyPlayed;
     private void Update()
     {
+        if(!_isMusicAlreadyPlayed){
+            if(g_isGameStarted){
+                AudioManager.instance.PlayLevelMusic(_musicID, _musicOffset);
+                _isMusicAlreadyPlayed = true;
+            }
+        }
+    }
 
+    public void PlaySFX(int sfxValue){
+        AudioManager.instance.PlaySFX(sfxValue);
     }
 }
