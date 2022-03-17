@@ -1025,6 +1025,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 708598103}
     m_Modifications:
     - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_text
+      value: A lonely cowboy having a long run in the middle of the desert in New
+        Mexico. He is looking for some hope to survive from thirst and uncomfortable
+        feelings in the sunny desert. Let us follow him towards his journey to the
+        oasis, the desired place for this lonely boy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_margin.z
       value: -223.66483
       objectReference: {fileID: 0}

@@ -1768,6 +1768,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 1979616366}
     m_Modifications:
     - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_text
+      value: Captured by his enemies, Lincoln found himself in a dungeon and is lost!
+        Lincoln was fearless, he tried finding a way back to the surface.  Help him
+        on his way out and do his knightly duties.  Collect shields to protect him
+        from what may come his way.
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontColor.b
       value: 0.8726415
       objectReference: {fileID: 0}
@@ -1945,7 +1952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7541374486652488098, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -126
+      value: -178.26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}

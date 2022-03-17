@@ -1333,6 +1333,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 424720692}
     m_Modifications:
     - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_text
+      value: "The School of Eros is having their very first camping in the forest. 
+        Ryori was very excited because he get to see again the beauty of nature.
+        The boy didn\u2019t want to go with his classmates so he traveled alone in
+        the forest towards their camping site. Visiting his grandma makes him familiar
+        with the forest. To reach the camping site, Ryori has to climb up the tree
+        and get all the fruits that he can.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_margin.z
       value: -240.48984
       objectReference: {fileID: 0}

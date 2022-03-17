@@ -2573,6 +2573,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1046745374}
     m_Modifications:
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_text
+      value: There was a penguin named "Pengie" who was kind, hardworking, and the
+        smartest in the class. She was admired by all. She was also a responsible
+        child. Pengie is an Aptenodytes penguin who cares so much about her family
+        that she is willing to give up her dream to provide for them. Her village
+        held a competition. Help her to climb up and collect coins more than the
+        other competitors.
+      objectReference: {fileID: 0}
     - target: {fileID: 724882047240489997, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontSize
       value: 15

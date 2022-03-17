@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 178.04, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.78, y: -45}
+  m_AnchoredPosition: {x: 2.78, y: -63.6}
   m_SizeDelta: {x: 442.66, y: 387.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &12850775
@@ -180,12 +180,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: "Victor, for the 3rd time, has broken out of prison. He smiles, confident
+    of another successful escape from the Secure Containment Facility.  No one, from
+    the techno-jungle that is City E-1337, knows his way better than him.  Growing
+    shouts and whistles from the guards soon echoed behind him.  Time was running
+    and so will Victor.  \u201CUp the scaffoldings \u2013 use the platforms,\u201D
+    he says, remembering his way out \u201CKeep Climbing, up towards the night sky\u201D."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 696295a46a9bdec40b93b53beb2df3d6, type: 2}
   m_sharedMaterial: {fileID: -843411632852597755, guid: 696295a46a9bdec40b93b53beb2df3d6, type: 2}
@@ -1400,7 +1400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724882048084062520, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_text
-      value: 'Level 0: Parkour Guy'
+      value: 'Level 10: Parkour Guy'
       objectReference: {fileID: 0}
     - target: {fileID: 724882048084062520, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontSize

@@ -667,6 +667,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 421380137}
     m_Modifications:
     - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_text
+      value: "On an early winter morning, a little boy named Cadence who is also
+        known as \u201CThe Winter Kid\u201D is on his way to his grandma\u2019s house
+        to drink his favorite delicious hot chocolate milk.  Help him reach the top
+        of the mountain despite the cold weather to have his favorite drink made
+        by his Grandma."
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_margin.z
+      value: -253.33359
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontColor.b
       value: 0.8352942
       objectReference: {fileID: 0}
@@ -677,6 +693,14 @@ PrefabInstance:
     - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -708,7 +732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724882048084062520, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_text
-      value: 'Level 0: The Winter Kid Cadence'
+      value: 'Level 4: The Winter Kid Cadence'
       objectReference: {fileID: 0}
     - target: {fileID: 724882048084062520, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontSize
@@ -828,11 +852,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7541374486652488098, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -29
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 7541374486652488098, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -113
+      value: -125.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}

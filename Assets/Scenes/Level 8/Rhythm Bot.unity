@@ -1331,6 +1331,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1962419459}
     m_Modifications:
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_text
+      value: "A Mad Beat-Scientist created an army of Rhythm Beat Mad-Robots that
+        take over the whole city of Utopia, but one of his bots become a deviant
+        to its master.  RBM-R-001 was its codename, it was the first robot that he
+        made.  It has its consciousness and become wary of its surrounding.  It named
+        itself \u201CGroovy\u201D and wander all dimensions in search of its purpose
+        other than creating havoc."
+      objectReference: {fileID: 0}
     - target: {fileID: 724882047240489997, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_fontSize
       value: 15

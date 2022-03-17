@@ -1214,6 +1214,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 1053306657}
     m_Modifications:
     - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
+      propertyPath: m_text
+      value: There was a little girl named Alice who lives in a Dessert Isle, who
+        is kind, brave, passionate, and confident, a perfect one to be a princess.
+        The Queen of the Dessert Isle challenged Alice to prove herself to become
+        a princess by collecting those desserts that are rare and difficult to get,
+        which are Chocoberries. Help her to collect those Chocoberries for her to
+        live in the Palace as a Princess.
+      objectReference: {fileID: 0}
+    - target: {fileID: 150361767798241346, guid: b04fbb08e76b4744ebd34023bb256ac3, type: 3}
       propertyPath: m_margin.x
       value: 80.45223
       objectReference: {fileID: 0}
