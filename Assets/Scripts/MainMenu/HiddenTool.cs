@@ -7,7 +7,7 @@ public class HiddenTool : MonoBehaviour
     [SerializeField] private GameObject ToolBox;
 
     // NOTE THIS IS FOR DEBUG ONLY DONT USE UNLESS YOU KNOW WHAT YOU ARE DOING
-
+    [ContextMenu("Delete Data")]
     public void DeleteData()
     {
         ConfirmationBox.Instance.ShowConfirmBox("Are you sure you want to Delete all of Data?\nThe game will Close doing this action.",

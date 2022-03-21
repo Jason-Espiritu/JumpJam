@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager GMInstance;
@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private Timer_Global TimeLeft;
     private Point_System Points;
 
+    [SerializeField] private TMP_Text StartLabel;
     //This came from the Main Repo Branch
     [Header("Game Level Mode")]
     public string g_GameLevelID;
@@ -71,8 +72,14 @@ public class GameManager : MonoBehaviour
     {
         if(!_isMusicAlreadyPlayed){
             if(g_isGameStarted){
+                StartLabel.enabled = false;
                 AudioManager.instance.PlayLevelMusic(_musicID, _musicOffset);
                 _isMusicAlreadyPlayed = true;
+                if (g_GameLevelID == "0"){
+                    AudioManager.instance.MusicSource.loop = true;
+                }else{
+                    AudioManager.instance.MusicSource.loop = false;
+                }
             }
         }
     }

@@ -14,15 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sentences:
   - High there! Can you help me climb these platforms?
-  - All you  have to do is click anywhere on the screen in order for me to jump.
+  - All you have to do, is tell me when to Jump.
+  - By pressing "Left Click" on the screen anywhere on the screen
+  - or press the Space Bar.
+  - Simple, right?
   - Oh right... Those platforms move.
   - The thing is... these platforms move in sync with the music.
-  - You have to time your jump with the music so you can proceed!
+  - You have to time my jump with the music, so we can proceed!
   - In other terms,
-  - ' click anywhere on the screen when you see the platform moves away from me.'
-  - or else I'll bump my head.
+  - whenever you see the platform moves away from the center of the screen.
+  - '"Jump"'
+  - or else I'll bump my head and fall back down.
   - ...
   - Its not that hard, right? ... Right?
   - ...
   - Anyway let's start now.
-  - Click anywhere on the screen if you want to start.
+  - Tell me to jump in order to start.

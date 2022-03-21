@@ -161,7 +161,7 @@ public class EndGameTutor : MonoBehaviour
     {
         //Check if Result is Perfect
         int PerfectScore = GameMngr.g_maxScore;
-        int PerfectTimeLeft = Mathf.FloorToInt((GameMngr.g_timeLimit - (GameMngr.g_maxScore * GameMngr.g_BPS)) % 60f);
+        int PerfectTimeLeft = Mathf.FloorToInt((GameMngr.g_timeLimit - (GameMngr.g_maxScore * GameMngr.g_BPS)));
         //Debug.Log(PerfectTimeLeft);
         if (_currentHighScore == PerfectScore && _currentTimeLeft >= PerfectTimeLeft)
         {

@@ -148,8 +148,8 @@ public class EndGame : MonoBehaviour
     {
         //Check if Result is Perfect
         int PerfectScore = GameMngr.g_maxScore;
-        int PerfectTimeLeft = Mathf.FloorToInt((GameMngr.g_timeLimit - (GameMngr.g_maxScore * GameMngr.g_BPS)) % 60f);
-        Debug.Log(PerfectTimeLeft);
+        int PerfectTimeLeft = Mathf.FloorToInt((GameMngr.g_timeLimit - (GameMngr.g_maxScore * GameMngr.g_BPS)));
+        //Debug.Log(PerfectTimeLeft);
         if (_currentHighScore == PerfectScore && _currentTimeLeft >= PerfectTimeLeft)
         {
             return true;
@@ -193,7 +193,7 @@ public class EndGame : MonoBehaviour
     int StarRewards()
     {
         float _pointsPercentage = (float)_currentHighScore / (float)GameMngr.g_maxScore;
-        Debug.Log(_pointsPercentage.ToString());
+        //Debug.Log(_pointsPercentage.ToString());
         if (_pointsPercentage > 0.0f && _pointsPercentage <= 0.5f) // 1 Star = 1% - 50% of Max Score
         {
             return 1;

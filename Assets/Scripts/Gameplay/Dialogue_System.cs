@@ -6,15 +6,25 @@ using TMPro;
 
 public class Dialogue_System : MonoBehaviour
 {
+    public static Dialogue_System Instance;
     [SerializeField] Canvas _dialogueBox;
     [SerializeField] GameObject _nextButton;
     [SerializeField] GameObject _jumpButton;
+    [SerializeField] TMP_Text _StartLabel;
     [SerializeField] TMP_Text _textDisplay;
     [SerializeField] string[] _sentences;
     [SerializeField] float _typingspeed;
     private int index; 
     private bool _isDialogueFinished;
     // Start is called before the first frame update
+
+    void Awake(){
+        if(Instance == null){
+            Instance = this;
+        }else{
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         _nextButton.SetActive(false);
@@ -48,6 +58,7 @@ public class Dialogue_System : MonoBehaviour
             _nextButton.SetActive(false);
             _dialogueBox.enabled = false;
             _jumpButton.SetActive(true);
+            _StartLabel.enabled = true;
         }
     }
 
@@ -66,5 +77,15 @@ public class Dialogue_System : MonoBehaviour
 
     public bool IsDialogueFinished(){
         return _isDialogueFinished;
+    }
+
+    public void SkipDialogue(){
+        StopCoroutine(TypeDialogue());
+        _textDisplay.text = "";
+        _isDialogueFinished = true;
+        _nextButton.SetActive(false);
+        _dialogueBox.enabled = false;
+        _jumpButton.SetActive(true);
+        _StartLabel.enabled = true;
     }
 }

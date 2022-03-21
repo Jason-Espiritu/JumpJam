@@ -57,7 +57,7 @@ public class Timer_Global : MonoBehaviour
         if (_timer >= GM.g_BPS)
         {
             g_openPlatform = true; //Open
-            _timer = 0f;
+            _timer = _timer - GM.g_BPS;
 
         }
         else if (_timer >= (GM.g_BPS / 2f))

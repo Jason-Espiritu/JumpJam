@@ -34,6 +34,22 @@ public class Player_Script : MonoBehaviour
 
     }
 
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.Space)){
+            try
+            {
+                if(Dialogue_System.Instance.IsDialogueFinished() && !GM.g_isGameEnded){
+                    Jump();
+                }
+            }
+            catch (System.Exception)
+            {
+                if(!GM.g_isGameEnded){
+                    Jump();
+                }
+            }
+        }
+    }
     private void FixedUpdate()
     {
         FallMultiplier(_isJumping);
