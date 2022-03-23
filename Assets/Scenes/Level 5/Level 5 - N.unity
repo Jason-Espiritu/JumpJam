@@ -1442,7 +1442,7 @@ MonoBehaviour:
   _musicID: 5
   g_normalMode: 1
   g_maxScore: 60
-  g_timeLimit: 65
+  g_timeLimit: 35
   g_isGameStarted: 0
   g_isGameEnded: 0
   _BPM: 103
@@ -4460,11 +4460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c3644afb1b0a044b55e9e658c03a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPlatforms: 60
-  leftPlatform: {fileID: 7030758227165284859, guid: 36ee2ddec876edd4d9649936d7dbf85f, type: 3}
-  rightPlatform: {fileID: 6203405148947708217, guid: 7cd4244e0c3d5b843aa27cb4e154afcb, type: 3}
-  finishPlatform: {fileID: 3188592836660430622, guid: 942510777f1e9164ab18e4e8f3583560, type: 3}
-  _nextPlatformSpawnsAt: {x: 0, y: 295}
 --- !u!1 &1014542839
 GameObject:
   m_ObjectHideFlags: 0

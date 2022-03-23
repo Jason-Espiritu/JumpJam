@@ -2162,6 +2162,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1748125297141211016, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748125297141211017, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1748125297141211020, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}

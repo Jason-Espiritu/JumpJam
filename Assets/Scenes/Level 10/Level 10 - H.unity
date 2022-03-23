@@ -772,7 +772,7 @@ MonoBehaviour:
   _musicID: 10
   g_normalMode: 0
   g_maxScore: 13
-  g_timeLimit: 16
+  g_timeLimit: 5.5
   g_isGameStarted: 0
   g_isGameEnded: 0
   _BPM: 150
