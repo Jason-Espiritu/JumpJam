@@ -12,6 +12,9 @@ public class DifficultySelection : MonoBehaviour
     [SerializeField] private bool _isTutorialMode;
     [Header("UI Objects")]
     [SerializeField] private int LevelID;
+    [SerializeField] private int perfectScore;
+    [SerializeField] private TMP_Text highScore_N;
+    [SerializeField] private TMP_Text highScore_H;
     [SerializeField] private Canvas dialogueBox;
     [SerializeField] private Button normalBtn;
     [SerializeField] private Button hardBtn;
@@ -73,10 +76,14 @@ public class DifficultySelection : MonoBehaviour
            }
         }else{
             int starsOnNormal = PlayerPrefs.GetInt("Level_" + LevelID + "-1_Star");
+            int highScoreN = PlayerPrefs.GetInt("Level_" + LevelID + "-1_HighScore");
+            int highScoreH = PlayerPrefs.GetInt("Level_" + LevelID + "-2_HighScore");
             for (int i = 0; i < starsOnNormal; i++)
            {
                stars[i].enabled = true;
            }
+            highScore_N.text = string.Format("{0:00}/{1:00}", highScoreN, perfectScore);
+            highScore_H.text = string.Format("{0:00}/{1:00}", highScoreH, perfectScore);
            //Unlocks Hard Mode if Normal has Stars
            if (starsOnNormal > 0){
                hardBtn.interactable = true;
@@ -85,7 +92,7 @@ public class DifficultySelection : MonoBehaviour
                 {
                     stars[i + 3].enabled = true;
                 }
-           }
+            }
         }
     }
     public void PlaySoundFX(int sfxID){

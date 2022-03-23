@@ -190,7 +190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: High Scores
+  m_text: High Score
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3faca2faa4470b4987e60c7205f8731, type: 2}
   m_sharedMaterial: {fileID: 1001178836896349588, guid: b3faca2faa4470b4987e60c7205f8731, type: 2}
@@ -690,6 +690,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isTutorialMode: 0
   LevelID: 0
+  perfectScore: 0
+  highScore_N: {fileID: 3599808834645252584}
+  highScore_H: {fileID: 4472628248695779816}
   dialogueBox: {fileID: 1748125297141211016}
   normalBtn: {fileID: 1748125296858170847}
   hardBtn: {fileID: 1748125298309787186}

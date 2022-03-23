@@ -22200,6 +22200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isTutorialMode: 1
   LevelID: 0
+  perfectScore: 0
+  highScore_N: {fileID: 3345506536477598925}
+  highScore_H: {fileID: 3345506536477598925}
   dialogueBox: {fileID: 3345506537093911060}
   normalBtn: {fileID: 3345506537372649539}
   hardBtn: {fileID: 3345506535922197422}

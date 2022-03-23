@@ -1431,6 +1431,10 @@ PrefabInstance:
       propertyPath: LevelID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4840259892603620668, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: perfectScore
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
 --- !u!224 &1544374811 stripped

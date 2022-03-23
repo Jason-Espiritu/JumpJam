@@ -290,6 +290,10 @@ PrefabInstance:
       propertyPath: LevelID
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4840259892603620668, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: perfectScore
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5519296514863196114, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_Layer
       value: 7
