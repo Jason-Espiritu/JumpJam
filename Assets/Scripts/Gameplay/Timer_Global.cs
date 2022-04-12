@@ -14,7 +14,7 @@ public class Timer_Global : MonoBehaviour
     [SerializeField] private TMP_Text CountDown;
     [SerializeField] private float _countdownTimer;
 
-    private float _timer;
+    public float g_timer;
 
     [HideInInspector] public float g_timeLeft;
     
@@ -41,28 +41,46 @@ public class Timer_Global : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GM.g_isGameEnded && !GM.g_isGameStarted)
+        {
+            StartTiming();
+        }
+        
         if (GM.g_isGameStarted)
         {
-            StartRunningPlatforms();
             if (!GM.g_isGameEnded)
             {
                 CountDownTimer();
+                StartTiming(); //Resets when Audio started to avoid weird audio timing cues
             }
         }
     }
 
-    void StartRunningPlatforms()
+    void StartTiming()
     {
-        _timer += Time.deltaTime;
-        if (_timer >= GM.g_BPS)
+        g_timer += Time.deltaTime;
+        if (g_timer >= GM.g_BPS)
         {
-            g_openPlatform = true; //Open
-            _timer = _timer - GM.g_BPS;
+            //g_openPlatform = true; //Open
+            g_timer = g_timer - GM.g_BPS;
+
+            //Audio Cues
+            if (GM.g_normalMode)
+            {
+                AudioManager.instance.PlaySFX2(3); //Audio Cue Play's Continiously
+            }
+            else
+            {
+                if (!GM.g_isGameStarted)
+                {
+                    AudioManager.instance.PlaySFX2(3); //Audio Cue Stops when the game started in Hard Mode
+                }
+            }
 
         }
-        else if (_timer >= (GM.g_BPS / 2f))
+        else if (g_timer >= (GM.g_BPS / 2f))
         {
-            g_openPlatform = false; //Close
+            //g_openPlatform = false; //Close
         }
 
         //UI_TEXT.text = Instance.g_timer.ToString();

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Script : MonoBehaviour
 {
+    [SerializeField] private float _inputRange;
     [SerializeField] private GameManager GM;
     [SerializeField] private Animator PlayerAnimator;
     [SerializeField] private float _speedMultiplier;
@@ -39,13 +40,15 @@ public class Player_Script : MonoBehaviour
             try
             {
                 if(Dialogue_System.Instance.IsDialogueFinished() && !GM.g_isGameEnded){
-                    Jump();
+                    RightBeat();
+                    //Jump();
                 }
             }
             catch (System.Exception)
             {
                 if(!GM.g_isGameEnded){
-                    Jump();
+                    RightBeat();
+                    //Jump();
                 }
             }
         }
@@ -56,31 +59,82 @@ public class Player_Script : MonoBehaviour
 
     }
 
-    public void Jump()
+    public void RightBeat()
+    {
+        if (!GM.g_isGameEnded)
+        {
+            if (GroundCheck())
+            {
+                float TimeofInput = Timer_Global.Instance.g_timer;
+                if(TimeofInput <= _inputRange || TimeofInput >= GameManager.GMInstance.g_BPS - _inputRange)
+                {
+                        
+                    Jump(true);
+                    Debug.Log("GREAT" + TimeofInput + " : " + GameManager.GMInstance.g_BPS);
+                    AudioManager.instance.PlaySFX(4);
+
+                    if (!GM.g_isGameStarted) { GM.g_isGameStarted = true; Timer_Global.Instance.g_timer = 0f; } // Checks if 1st (Start) Jump
+                    
+                    //Score
+                    if (GM.g_isGameStarted)
+                    {
+                        Point_System.PSinstance.AddBeatValue(true);
+                    }
+
+                }
+                else
+                {
+                    Jump(false);
+                    Debug.Log("BAD " + TimeofInput + " : " + GameManager.GMInstance.g_BPS);
+                    AudioManager.instance.PlaySFX(5);
+
+                    //Score
+                    if (GM.g_isGameStarted)
+                    {
+                        Point_System.PSinstance.AddBeatValue(false);
+                    }
+                }
+            }
+        }
+    }
+
+    public void Jump(bool isGreatJump)
     {
         if (!GM.g_isGameEnded) // If Game is Ended... It can't jump anymore
         {
             if (GroundCheck())
             {
-                _playerRigidBody.velocity = Vector2.up * _jumpForce;
+                if (isGreatJump)
+                {
+                    _playerRigidBody.velocity = Vector2.up * _jumpForce;
+                }
+                else
+                {
+                    _playerRigidBody.velocity = Vector2.up * (_jumpForce / 2); //Short Jump
+                }
+
                 _isJumping = true;
 
                 //PlaySFX(); // Plays Jump sfx *Not being used due to no good sfx
                 PlayerAnimator.SetBool("Jumping", true); // Execute Jump Anim
             }
 
-            //Starts the Game when the Player pressed Jump
+            /*/Starts the Game when the Player pressed Jump
             if(!GM.g_isGameStarted)
             {
                 GM.g_isGameStarted = true;
             }
+            else
+            {
+                //Check Accuracy
+            }*/
         }
     }
     private bool GroundCheck()
     {
         Collider2D groundCheck = Physics2D.OverlapCircle(_feetPos.position, _checkRadius, _GroundLayer);
 
-        if (groundCheck != null)
+        if (groundCheck != null && _playerRigidBody.velocity.y == 0f)
         {
             return true;
         }
@@ -113,9 +167,5 @@ public class Player_Script : MonoBehaviour
             PlayerAnimator.SetBool("Falling", true); //Play Falling Animation
             PlayerAnimator.SetBool("Jumping", false);
         }
-    }
-
-    void PlaySFX(){
-        AudioManager.instance.PlaySFX(3);
     }
 }

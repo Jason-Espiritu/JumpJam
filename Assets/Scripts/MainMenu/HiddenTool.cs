@@ -13,8 +13,8 @@ public class HiddenTool : MonoBehaviour
         ConfirmationBox.Instance.ShowConfirmBox("Are you sure you want to Delete all of Data?\nThe game will Close doing this action.",
         () => {
             PlayerPrefs.DeleteAll();
-            AlertBox.Instance.ShowAlertBox("Data has Been Reset.\nClosing the Application to take effect.",
-            () => {Application.Quit();}
+            AlertBox.Instance.ShowAlertBox("Data has Been Reset.",
+            () => {/*Do Nothing*/}
             );
         },
         () => {/*Do Nothing*/}

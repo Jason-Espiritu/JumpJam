@@ -27,7 +27,14 @@ public class PauseButton : MonoBehaviour
                 //Resume Audio
                 AudioManager.instance.PauseorStopMusic(false);
                 Time.timeScale = 1f;
+
+                //Checks Audio Settings
+                GameManager.GMInstance.CheckMusicAudio();
             }
         }
+    }
+    public bool IsScreenPaused()
+    {
+        return _isGamePaused;
     }
 }

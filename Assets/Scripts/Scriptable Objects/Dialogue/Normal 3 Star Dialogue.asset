@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39484f96506133d46b58fcf80a040d79, type: 3}
-  m_Name: Normal Fin Dialogue
+  m_Name: Normal 3 Star Dialogue
   m_EditorClassIdentifier: 
   _sentences:
   - Congratulations! You did it!

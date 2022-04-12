@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class GameManager : MonoBehaviour
     private Timer_Global TimeLeft;
     private Point_System Points;
 
+    [SerializeField] private PauseButton PauseButton;
+    [SerializeField] private Settings Settings;
     [SerializeField] private TMP_Text StartLabel;
+
     //This came from the Main Repo Branch
     [Header("Game Level Mode")]
     public string g_GameLevelID;
@@ -64,6 +68,8 @@ public class GameManager : MonoBehaviour
 
         //Reset AudioManager Pause Variable
         AudioManager.instance.GameRestarted();
+
+        CheckMusicAudio();
     }
 
     // Update is called once per frame
@@ -81,6 +87,26 @@ public class GameManager : MonoBehaviour
                     AudioManager.instance.MusicSource.loop = false;
                 }
             }
+        }
+    }
+
+    public void CheckMusicAudio() //Checks if Volume of Master or Music is 0
+    {
+        if(AudioManager.instance.g_valMasterSet == 0.0001f || AudioManager.instance.g_valMusicSet == 0.0001f)
+        {
+            AlertBox.Instance.ShowAlertBox("Music / Master Volume has been set to 0\nPlease set the Master / Music Volume Above 0",
+                () => 
+                {
+                    if (!PauseButton.IsScreenPaused())
+                    {
+                        PauseButton.Pause();
+                    }
+
+                    if (!Settings.IsinSettings())
+                    {
+                        Settings.ShowHideSettings(true);
+                    }
+                });
         }
     }
 

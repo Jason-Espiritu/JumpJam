@@ -43,7 +43,7 @@ public class LevelUnlock : MonoBehaviour
 
     void UnlockedLevels(int totalStars)
     {
-        int[] starRequirements = {3, 6, 12, 15, 20, 28, 31, 34, 40, 51};
+        int[] starRequirements = {0, 3, 6, 12, 15, 20, 28, 31, 34, 40};
         Debug.Log(_obtainedStars);
         for (int level = 0; level < starRequirements.Length; level++)
         {

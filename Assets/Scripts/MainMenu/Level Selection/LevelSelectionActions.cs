@@ -23,7 +23,7 @@ public class LevelSelectionActions : MonoBehaviour
 
     public void ShowDifficultyBox(int LevelID){
         DifficultySelection.Instance.ShowDiffBox(
-            () => {SceneManager.LoadScene("Level "+ LevelID + " - N");},
+            () => {NormalModeCheck(LevelID);},
             () => {HardModeCheck(LevelID);},
             () => {/* Do Nothing */}
         );
@@ -39,6 +39,22 @@ public class LevelSelectionActions : MonoBehaviour
             default:
                 ConfirmationBox.Instance.ShowConfirmBox("Tutorial for Hard Mode is Needed\nPlay Hard Mode Tutorial?",
                 () => {SceneManager.LoadScene("Level 0 - H");},
+                () => {/*Do Nothing*/}
+                );
+                break;
+        }
+    }
+    void NormalModeCheck(int LevelID)
+    {
+        int isHardTutorPlayed = PlayerPrefs.GetInt("NormalTutor?");
+        switch (isHardTutorPlayed)
+        {
+            case 1:
+                SceneManager.LoadScene("Level " + LevelID + " - N");
+                break;
+            default:
+                ConfirmationBox.Instance.ShowConfirmBox("Tutorial for Normal Mode is Needed\nPlay Normal Mode Tutorial?",
+                () => { SceneManager.LoadScene("Level 0 - N"); },
                 () => {/*Do Nothing*/}
                 );
                 break;

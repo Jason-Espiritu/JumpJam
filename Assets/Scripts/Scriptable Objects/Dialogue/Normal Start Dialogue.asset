@@ -15,18 +15,29 @@ MonoBehaviour:
   _sentences:
   - High there! Can you help me climb these platforms?
   - All you have to do, is tell me when to Jump.
-  - By pressing "Left Click" on the screen anywhere on the screen
+  - By pressing "Left Click" anywhere on the screen
   - or press the Space Bar.
+  - Jumping on the right time will reward you with a point.
+  - It will show up on the upper left of the screen called "Score".
+  - Beside of that is the "Time"
+  - 'The "Time" show us how much time is left. '
+  - So we need to reach the top before "Time" runs out.
   - Simple, right?
-  - Oh right... Those platforms move.
-  - The thing is... these platforms move in sync with the music.
-  - You have to time my jump with the music, so we can proceed!
-  - In other terms,
-  - whenever you see the platform moves away from the center of the screen.
+  - Huh? you don't know when should you tell me to jump?
+  - Hmmm... You're right...
+  - Oh!... I know...
+  - Let's use this "thump" sound as your cue.
+  - So whenever you hear this "thump"...
   - '"Jump"'
-  - or else I'll bump my head and fall back down.
+  - or else my jump will be short and can't go up to the platform..
+  - and you lose a point on your "Score"
   - ...
-  - Its not that hard, right? ... Right?
+  - Its not that hard, right?
+  - Hm? what's that?
+  - On the lower left on the Screen?
+  - Oh yeah, I almost forgot about that...
+  - There are collectibles that we can obtain, once we start jumping.
+  - And those will act as Bonus Points for you.
   - ...
   - Anyway let's start now.
-  - Tell me to jump in order to start.
+  - Just remember to "Jump" when you heard the "thump"

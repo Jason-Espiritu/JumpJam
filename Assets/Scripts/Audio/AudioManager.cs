@@ -12,8 +12,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] List<AudioClip> MusicClips = new List<AudioClip>(); 
 
     [SerializeField] public AudioSource SFXSource;
+    [SerializeField] public AudioSource SFX2Source;
     [SerializeField] List<AudioClip> SFXClips = new List<AudioClip>();
-    
+
+    //Audio Setting Values
+    [HideInInspector] public float g_valMasterSet;
+    [HideInInspector] public float g_valMusicSet;
+
+
     //Audio Settings
     const string MASTER_AUDIO = "MasterVolume";
     const string MUSIC_AUDIO = "MusicVolume";
@@ -44,6 +50,9 @@ public class AudioManager : MonoBehaviour
         _audioMixer.SetFloat(SettingNames.masterVolume, Mathf.Log10(master_Volume) * 20);
         _audioMixer.SetFloat(SettingNames.musicVolume, Mathf.Log10(music_Volume) * 20);
         _audioMixer.SetFloat(SettingNames.sfxVolume, Mathf.Log10(sfx_Volume) * 20);
+
+        g_valMasterSet = master_Volume;
+        g_valMusicSet = music_Volume;
     }
 
     // Play Functions
@@ -78,7 +87,11 @@ public class AudioManager : MonoBehaviour
     {
         SFXSource.PlayOneShot(SFXClips[sfxValue]);
     }
-    
+    public void PlaySFX2(int sfxValue)
+    {
+        SFX2Source.PlayOneShot(SFXClips[sfxValue]);
+    }
+
     private bool _isPaused;
     public void PauseorStopMusic(bool stop)
     {

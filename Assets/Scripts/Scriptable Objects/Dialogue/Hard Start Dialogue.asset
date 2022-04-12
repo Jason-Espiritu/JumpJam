@@ -13,10 +13,17 @@ MonoBehaviour:
   m_Name: Hard Start Dialogue
   m_EditorClassIdentifier: 
   _sentences:
-  - Hey! Heyyyy!!!
-  - I need your help again! The platforms don't stop anymore.
-  - It seems like we can't stop on a platform for too long like we did last time!
-  - The music, beat, and everything are the same.
-  - only the platforms have changed!
-  - Whatever you do, don't stop jumping!
-  - ... In sync with the music of course.
+  - Oh..
+  - Hi there, friend.
+  - I need your help again.
+  - You see... I ran into another problem.
+  - Remember this "thump" sound that we always hear?
+  - Well now, whenever I start to jump on the first platform.
+  - The "thump" sound is now gone, and I can't time my jump anymore.
+  - The music, is still the same.
+  - Hmmm... Since the "thump" only stops when I start to jump on the first platform.
+  - I think we need to memorize the rhythm of this "thump" before we start to jump.
+  - So help me climb to the top again my friend.
+  - When we start... keep the rhythm of the thumping in your memory.
+  - And use that to help me jump at the right time.
+  - Let's start...

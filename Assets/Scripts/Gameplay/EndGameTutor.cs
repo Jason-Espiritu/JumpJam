@@ -13,15 +13,16 @@ public class EndGameTutor : MonoBehaviour
     
     [Header("Scorring System")]
     [SerializeField] Canvas ResultsScreen;
-    [SerializeField] TMP_Text LabelScore;
-    [SerializeField] TMP_Text LabelTimeLeft;
+    [SerializeField] TMP_Text LabelTimingScore;
+    [SerializeField] TMP_Text LabelCollectibleScore;
+    [SerializeField] TMP_Text LabelTotalScore;
     [SerializeField] TMP_Text LabelStatus;
     [SerializeField] Image[] Stars;
 
     [SerializeField] float DelayInSeconds;
     private GameManager GameMngr;
     private Point_System Points;
-    private Timer_Global TimeLimit;
+
 
     private bool _GameEndProcessed;
 
@@ -29,17 +30,16 @@ public class EndGameTutor : MonoBehaviour
 
     //Saved HighScore and Lowest time from
     private int _savedHighScore;
-    private int _savedTimeLeft;
     private int _savedStarReward;
-    
+
     //Current
-    private int _currentHighScore;
-    private int _currentTimeLeft;
+    private int _currentTotalScore;
+    private int _currentCollectedCollectables;
+    private int _currentScore;
     private int _starReward;
-    private bool _saveIt;
+
     //This to create a standard name for the Level.
     private string _highScoreLevelName;
-    private string _timeLeftLevelName;
     private string _starRewardLevelName;
 
     // Start is called before the first frame update
@@ -47,20 +47,18 @@ public class EndGameTutor : MonoBehaviour
     {
         GameMngr = GetComponent<GameManager>();
         Points = GetComponent<Point_System>();
-        TimeLimit = GetComponent<Timer_Global>();
+
 
         _gameLevelID = GameMngr.g_GameLevelID;
 
         //Recompile Full Name of Level
         _highScoreLevelName = "Level_" + _gameLevelID + "_HighScore";
-        _timeLeftLevelName = "Level_" + _gameLevelID + "_TimeLeft";
         _starRewardLevelName = "Level_" + _gameLevelID + "_Star";
 
         //Load HighScore
         if (IsThereSavedScore())
         {
             _savedHighScore = PlayerPrefs.GetInt(_highScoreLevelName);
-            _savedTimeLeft = PlayerPrefs.GetInt(_timeLeftLevelName);
             _savedStarReward = PlayerPrefs.GetInt(_starRewardLevelName);
         }
     }
@@ -70,10 +68,6 @@ public class EndGameTutor : MonoBehaviour
     {
         if (GameMngr.g_isGameEnded && !_GameEndProcessed)
         {
-            // Get Current Score
-            _currentHighScore = Points.GetScore();
-            _currentTimeLeft = TimeLimit.GetTimeLeft();
-
             StartCoroutine(CalculateScores(1f));
             _GameEndProcessed = true;
         }
@@ -85,45 +79,79 @@ public class EndGameTutor : MonoBehaviour
         GameMngr.g_isGameStarted = false;
         //Debug.Log("Game Finished");
 
-        //Play Dialogue
-        DialogueCaller.PlayDialogue(_finalDialogueSetIndex);
-        yield return new WaitUntil(Dialogue_System.IsDialogueFinished);
+        // Get Current Score
+        _currentCollectedCollectables = Points.GetCollectibleScore();
+        _currentScore = Points.GetTimingScore();
+        _currentTotalScore = _currentCollectedCollectables + _currentScore;
 
         //Reveal Scores
-        ResultsScreen.enabled = true;
 
         _starReward = StarRewards();
         //Check if Score is Perfect
-        if (IsPerfect())
+        switch (_starReward)
         {
-            //Show Perfect Score
-            //Debug.Log("Perfect Score");
-            LabelStatus.text = "Perfect!";
-        }
+            case 1:
+                LabelStatus.text = "Nice";
+                if (IsNewHighScore())
+                {
+                    LabelStatus.text += " and Best Score!";
+                    SaveNewScores();
+                }
+                
+                //Play Dialogue
+                DialogueCaller.PlayDialogue(5);
+                yield return new WaitUntil(Dialogue_System.IsDialogueFinished);
 
-        // Check if Score is a HighScore
-        if (IsNewHighScore())
-        {
-            //Show Best Record
-            //Debug.Log("New High Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
-            if (IsPerfect())
-            {
-                LabelStatus.text += " and Best Record!"; //Adds in the Perfect
-            }
-            else
-            {
-                LabelStatus.text = "Best Record!";
-            }
-            LabelScore.text = string.Format("{0:00}", _currentHighScore);
-            LabelTimeLeft.text = string.Format("{0:00}", _currentTimeLeft);
-            _saveIt = true; // Let the Game Save the Score and Star Reward
+                IsTutorialModePlayed(); //Tutorial Mode Completed
+
+                break;
+
+            case 2:
+                LabelStatus.text = "Great Job";
+                if (IsNewHighScore())
+                {
+                    LabelStatus.text += " and Best Score!";
+                    SaveNewScores();
+                }
+                
+                //Play Dialogue
+                DialogueCaller.PlayDialogue(6);
+                yield return new WaitUntil(Dialogue_System.IsDialogueFinished);
+
+                IsTutorialModePlayed(); //Tutorial Mode Completed
+
+                break;
+
+            case 3:
+                LabelStatus.text = "Perfect!";
+                if (IsNewHighScore())
+                {
+                    LabelStatus.text += " and Best Score!";
+                    SaveNewScores();
+                }
+
+                //Play Dialogue
+                DialogueCaller.PlayDialogue(_finalDialogueSetIndex);
+                yield return new WaitUntil(Dialogue_System.IsDialogueFinished);
+
+                IsTutorialModePlayed(); //Tutorial Mode Completed
+
+                break;
+            default:
+                LabelStatus.text = "Sorry Try Again";
+                
+                //Play Dialogue
+                DialogueCaller.PlayDialogue(4);
+                yield return new WaitUntil(Dialogue_System.IsDialogueFinished);
+
+                IsTutorialModePlayed(); //Tutorial Mode Completed
+
+                break;
         }
-        else
-        {
-            //Debug.Log("Score " + _currentHighScore + " Time Left: " + _currentTimeLeft);
-            LabelScore.text = string.Format("{0:00}", _currentHighScore);
-            LabelTimeLeft.text = string.Format("{0:00}", _currentTimeLeft);
-        }
+        ResultsScreen.enabled = true;
+
+        //Prints Result Values
+        PrintResult(_currentScore, _currentCollectedCollectables, _currentTotalScore);
 
         //Show Star Rewards
         for (int grant = 0; grant < _starReward; grant++)
@@ -131,60 +159,32 @@ public class EndGameTutor : MonoBehaviour
             Stars[grant].enabled = true;
         }
 
-        //Save Scorest
-        SaveNewScores();
-
-        //Save if HardMode is Finished
-        IsHardModePlayed();
-
         //Slowly Stop the BGM
         StartCoroutine(AudioManager.instance.FadeOut(10f));
     }
 
+    void PrintResult(int timingScore, int collectibleScore, int totalScore)
+    {
+        LabelTimingScore.text = string.Format("Score x {0:00}", timingScore);
+        LabelCollectibleScore.text = string.Format("Bonus x {0:00}", collectibleScore);
+        LabelTotalScore.text = string.Format("{0:00}", totalScore);
+    }
+
     void SaveNewScores()
     {
-        if (_saveIt)
-        {
-            //Recalculate and Save in total stars.
-            CalculateTotalStars();
-            //Save Highscore
-            PlayerPrefs.SetInt(_highScoreLevelName, _currentHighScore);
-            //Save Time Left
-            PlayerPrefs.SetInt(_timeLeftLevelName, _currentTimeLeft);
-            //Save Star Accomplishment
-            PlayerPrefs.SetInt(_starRewardLevelName, _starReward);
-            //Debug.Log("Scores Saved Total Stars = " + PlayerPrefs.GetInt("TotalStars"));
-            _saveIt = false;
-        }
+        //Save Highscore
+        PlayerPrefs.SetInt(_highScoreLevelName, _currentTotalScore);
+
+        //Save Star Accomplishment
+        PlayerPrefs.SetInt(_starRewardLevelName, _starReward);
+        //Debug.Log("Scores Saved Total Stars = " + PlayerPrefs.GetInt("TotalStars"));
     }
-    bool IsPerfect()
-    {
-        //Check if Result is Perfect
-        int PerfectScore = GameMngr.g_maxScore;
-        int PerfectTimeLeft = Mathf.FloorToInt((GameMngr.g_timeLimit - (GameMngr.g_maxScore * GameMngr.g_BPS)));
-        //Debug.Log(PerfectTimeLeft);
-        if (_currentHighScore == PerfectScore && _currentTimeLeft >= PerfectTimeLeft)
-        {
-            return true;
-        }
-        return false;
-    }
+
     bool IsNewHighScore()
     {
         if (IsThereSavedScore())
         {
-            if (_currentHighScore == _savedHighScore)
-            {
-                if(_currentTimeLeft > _savedTimeLeft)
-                {
-                   return true; // New High Score because Time is Better even if Score is Equal
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else if (_currentHighScore > _savedHighScore)
+            if (_currentTotalScore > _savedHighScore)
             {
                 return true; // New High Score because Score is Better
             }
@@ -197,7 +197,7 @@ public class EndGameTutor : MonoBehaviour
     }
     bool IsThereSavedScore()
     {
-        if (PlayerPrefs.GetInt("Level_"  + _gameLevelID +  "_HighScore") > 0)
+        if (PlayerPrefs.GetInt("Level_" + _gameLevelID + "_HighScore") > 0)
         {
             return true;
         }
@@ -205,40 +205,34 @@ public class EndGameTutor : MonoBehaviour
     }
     int StarRewards()
     {
-        float _pointsPercentage = (float)_currentHighScore / (float)GameMngr.g_maxScore;
+        float _pointsPercentage = (float)_currentTotalScore / ((float)GameMngr.g_maxScore * 2);
         //Debug.Log(_pointsPercentage.ToString());
-        if (_pointsPercentage > 0.0f && _pointsPercentage <= 0.5f) // 1 Star = 1% - 50% of Max Score
+        if (_pointsPercentage > 0.0f && _pointsPercentage <= 0.5f) // 1 Star = 1% - 50% of Total Score
         {
-            return 3;
-        }else if (_pointsPercentage > 0.5f && _pointsPercentage <= 1f && !IsPerfect())
+            return 1;
+        }
+        else if (_pointsPercentage > 0.5f && _pointsPercentage < 1f) // 2 Star = 51 - 99% of Total Score
         {
-            return 3;
-        }else if (IsPerfect())
+            return 2;
+        }
+        else if (_pointsPercentage == 1f) // 3 Star = 100% of Total Score // Perfect Score
         {
             return 3;
         }
 
         return 0;
     }
-    void CalculateTotalStars()
-    {
-        //Get Total Stars
-        int totalstars = PlayerPrefs.GetInt("TotalStars");
-        //Compare Current and Saved Star Rewards to see if there is a difference
-        int starDifference = _starReward - _savedStarReward;
-        if (starDifference > 0)
-        {
-            //Add Positive Difference to Total Stars
-            totalstars += starDifference;
-            PlayerPrefs.SetInt("TotalStars", totalstars); //Uncomment if done
-            //Debug.Log("Saved");
-        }
-    }
+
 
     //Save if HardModeTutorial is Played
-    void IsHardModePlayed(){
+    void IsTutorialModePlayed(){
         if(!GameMngr.g_normalMode){
             PlayerPrefs.SetInt("HardTutor?", 1);
+            Debug.Log("Hard Mode Saved");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("NormalTutor?", 1);
             Debug.Log("Hard Mode Saved");
         }
     }

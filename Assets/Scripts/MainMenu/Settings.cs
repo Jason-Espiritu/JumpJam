@@ -12,6 +12,7 @@ public class Settings : MonoBehaviour
     [SerializeField] Slider _masterAudio;
     [SerializeField] Slider _musicAudio;
     [SerializeField] Slider _sfxAudio;
+    [SerializeField] Button _applyResolution;
 
     Canvas settingScreen;
 
@@ -61,6 +62,8 @@ public class Settings : MonoBehaviour
 
         _resolution.value = _resolutionIndx;
         _isFullScreenMode.isOn = Convert.ToBoolean(_fullScreenMode);
+
+        _applyResolution.interactable = false;
     }
 
     // Audio Settings
@@ -68,11 +71,14 @@ public class Settings : MonoBehaviour
         _audioMixer.SetFloat(MASTER_AUDIO, Mathf.Log10(value) * 20);
         //Save Master Volume
         PlayerPrefs.SetFloat(SettingNames.masterVolume, _masterAudio.value);
+        //Save Master Volume in AudioManager
+        AudioManager.instance.g_valMasterSet = value;
     }
     void SetMusicVolume(float value){
         _audioMixer.SetFloat(MUSIC_AUDIO, Mathf.Log10(value) * 20);
         //Save Music Volume
         PlayerPrefs.SetFloat(SettingNames.musicVolume, _musicAudio.value);
+        AudioManager.instance.g_valMusicSet = value;
     }
     void SetSFXVolume(float value){
         _audioMixer.SetFloat(SFX_AUDIO, Mathf.Log10(value) * 20);
@@ -84,6 +90,10 @@ public class Settings : MonoBehaviour
         _masterAudio.value = PlayerPrefs.GetFloat(SettingNames.masterVolume, 0.5f);
         _musicAudio.value = PlayerPrefs.GetFloat(SettingNames.musicVolume, 1f);
         _sfxAudio.value = PlayerPrefs.GetFloat(SettingNames.sfxVolume, 1f);
+
+        //Save Slider Values to AudioManager
+        AudioManager.instance.g_valMasterSet = _masterAudio.value;
+        AudioManager.instance.g_valMusicSet = _musicAudio.value;
     }
 
     //Save and Quit Settings Screen
@@ -107,6 +117,11 @@ public class Settings : MonoBehaviour
     }
     public void ShowHideSettings(bool value){
         settingScreen.enabled = value;
+    }
+
+    public bool IsinSettings()
+    {
+        return settingScreen.enabled;
     }
 
     public void PlaySoundFX(int sfxID){

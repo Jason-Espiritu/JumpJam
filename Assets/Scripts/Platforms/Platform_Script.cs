@@ -50,11 +50,11 @@ public class Platform_Script : MonoBehaviour
         {
             if (!Timer_Global.Instance.g_openPlatform)
             {
-                DebugF(false, _isPlatformOpen); // Close Platform
+                //DebugF(false, _isPlatformOpen); // Close Platform
             }
             else if (Timer_Global.Instance.g_openPlatform)
             {
-                DebugF(true, _isPlatformOpen); //Open Platform
+                //DebugF(true, _isPlatformOpen); //Open Platform
             }
         }
         //Player = PlayerCheck(_normalMode);
