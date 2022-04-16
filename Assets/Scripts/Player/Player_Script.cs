@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Script : MonoBehaviour
 {
+
     [SerializeField] private float _inputRange;
     [SerializeField] private GameManager GM;
     [SerializeField] private Animator PlayerAnimator;
@@ -14,11 +15,14 @@ public class Player_Script : MonoBehaviour
     [SerializeField] private Transform _feetPos;
     [SerializeField] private float _checkRadius;
     [SerializeField] private LayerMask _GroundLayer;
+    [SerializeField] private bool _isJumping;
+    
+    [Header("Player Notification")]
+    [SerializeField] private GameObject _parentGameObject;
+    [SerializeField] private GameObject _jumpNotif;
     
     private Rigidbody2D _playerRigidBody;
     
-    [SerializeField] private bool _isJumping;
-
     //constant variables
     private const float _constJF = 00.5f;
 
@@ -56,7 +60,6 @@ public class Player_Script : MonoBehaviour
     private void FixedUpdate()
     {
         FallMultiplier(_isJumping);
-
     }
 
     public void RightBeat()
@@ -66,11 +69,13 @@ public class Player_Script : MonoBehaviour
             if (GroundCheck())
             {
                 float TimeofInput = Timer_Global.Instance.g_timer;
+                string jumpNotif;
                 if(TimeofInput <= _inputRange || TimeofInput >= GameManager.GMInstance.g_BPS - _inputRange)
                 {
                         
                     Jump(true);
                     Debug.Log("GREAT" + TimeofInput + " : " + GameManager.GMInstance.g_BPS);
+                    jumpNotif = "Great";
                     AudioManager.instance.PlaySFX(4);
 
                     if (!GM.g_isGameStarted) { GM.g_isGameStarted = true; Timer_Global.Instance.g_timer = 0f; } // Checks if 1st (Start) Jump
@@ -79,21 +84,26 @@ public class Player_Script : MonoBehaviour
                     if (GM.g_isGameStarted)
                     {
                         Point_System.PSinstance.AddBeatValue(true);
+                        jumpNotif += " + 1"; //Add Added Value
                     }
-
                 }
                 else
                 {
                     Jump(false);
                     Debug.Log("BAD " + TimeofInput + " : " + GameManager.GMInstance.g_BPS);
+                    jumpNotif = "Bad";
                     AudioManager.instance.PlaySFX(5);
-
+                    
                     //Score
                     if (GM.g_isGameStarted)
                     {
                         Point_System.PSinstance.AddBeatValue(false);
+                        jumpNotif += " - 1"; //Add subtracted Value
                     }
                 }
+                //Sends string to GameManager
+                GM.g_jumpNotif = jumpNotif;
+                SpawnNotification();
             }
         }
     }
@@ -118,16 +128,6 @@ public class Player_Script : MonoBehaviour
                 //PlaySFX(); // Plays Jump sfx *Not being used due to no good sfx
                 PlayerAnimator.SetBool("Jumping", true); // Execute Jump Anim
             }
-
-            /*/Starts the Game when the Player pressed Jump
-            if(!GM.g_isGameStarted)
-            {
-                GM.g_isGameStarted = true;
-            }
-            else
-            {
-                //Check Accuracy
-            }*/
         }
     }
     private bool GroundCheck()
@@ -167,5 +167,10 @@ public class Player_Script : MonoBehaviour
             PlayerAnimator.SetBool("Falling", true); //Play Falling Animation
             PlayerAnimator.SetBool("Jumping", false);
         }
+    }
+
+    public void SpawnNotification()//Spawns the Notification
+    {
+        Instantiate(_jumpNotif, _parentGameObject.transform);
     }
 }

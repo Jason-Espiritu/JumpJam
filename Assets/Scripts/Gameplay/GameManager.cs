@@ -7,9 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager GMInstance;
 
-    private Timer_Global TimeLeft;
-    private Point_System Points;
-
     [SerializeField] private PauseButton PauseButton;
     [SerializeField] private Settings Settings;
     [SerializeField] private TMP_Text StartLabel;
@@ -35,7 +32,10 @@ public class GameManager : MonoBehaviour
 
     public float g_BPM_Multiplier;
     public float g_timerPlattform;
-    
+
+    //For the Jump Notification
+    [HideInInspector] public string g_jumpNotif;
+
     //constant Varible/s
     private const float _BPMConstant = 60f;
     // Start is called before the first frame update
@@ -55,9 +55,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        TimeLeft = GetComponent<Timer_Global>();
-        Points = GetComponent<Point_System>();
-
         //BPS Calculation
         _BPS = _BPMConstant / _BPM;
         g_BPS = _BPS;
