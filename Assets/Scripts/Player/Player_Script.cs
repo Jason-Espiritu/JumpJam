@@ -69,7 +69,7 @@ public class Player_Script : MonoBehaviour
             if (GroundCheck())
             {
                 float TimeofInput = Timer_Global.Instance.g_timer;
-                string jumpNotif;
+                string jumpNotif = "";
                 if(TimeofInput <= _inputRange || TimeofInput >= GameManager.GMInstance.g_BPS - _inputRange)
                 {
                         
@@ -90,9 +90,17 @@ public class Player_Script : MonoBehaviour
                 else
                 {
                     Jump(false);
-                    Debug.Log("BAD " + TimeofInput + " : " + GameManager.GMInstance.g_BPS);
-                    jumpNotif = "Bad";
                     AudioManager.instance.PlaySFX(5);
+                    
+                    //Checks if it's too early or too late.
+                    float _middleBPS = GameManager.GMInstance.g_BPS / 2;
+                    if(TimeofInput >= _middleBPS){
+                        jumpNotif = "Too Early";
+                    }else
+                    {
+                        jumpNotif = "Too Late";
+                    }
+                    Debug.Log("BAD " + TimeofInput + " : " + _middleBPS);
                     
                     //Score
                     if (GM.g_isGameStarted)
@@ -100,6 +108,8 @@ public class Player_Script : MonoBehaviour
                         Point_System.PSinstance.AddBeatValue(false);
                         jumpNotif += " - 1"; //Add subtracted Value
                     }
+
+
                 }
                 //Sends string to GameManager
                 GM.g_jumpNotif = jumpNotif;

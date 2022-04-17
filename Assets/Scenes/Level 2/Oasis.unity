@@ -188,23 +188,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1748125297141211020, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -853.33325
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 1748125297141211020, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -480
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1748125297141211020, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7999997
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1748125297141211020, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7999997
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1748125297141211020, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.7999997
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1748125297141211020, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1417,23 +1417,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4863141899047282099, guid: 926f9124f03508a49a92204dd83e4c6a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -853.33325
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 4863141899047282099, guid: 926f9124f03508a49a92204dd83e4c6a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -480
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4863141899047282099, guid: 926f9124f03508a49a92204dd83e4c6a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7999997
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4863141899047282099, guid: 926f9124f03508a49a92204dd83e4c6a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7999997
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4863141899047282099, guid: 926f9124f03508a49a92204dd83e4c6a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.7999997
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4863141899047282099, guid: 926f9124f03508a49a92204dd83e4c6a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2368,12 +2368,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
