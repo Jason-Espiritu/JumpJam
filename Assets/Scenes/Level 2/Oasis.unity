@@ -286,6 +286,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1845686862594837779, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -111.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2000703683841134812, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -293,6 +297,12 @@ PrefabInstance:
     - target: {fileID: 2072141192030374790, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941511852236894951, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_text
+      value: 'Time Limit
+
+        31 Sec.'
       objectReference: {fileID: 0}
     - target: {fileID: 4033949442361532527, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_Layer
@@ -330,6 +340,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7488030844518265597, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_text
+      value: 'Speed
+
+        77.5 BPM'
+      objectReference: {fileID: 0}
     - target: {fileID: 7706221606325187636, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -341,6 +357,18 @@ PrefabInstance:
     - target: {fileID: 8308459587252734157, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790344037657862678, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_text
+      value: '40
+
+        Collectibles'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985124701871436398, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_text
+      value: '40
+
+        Platforms'
       objectReference: {fileID: 0}
     - target: {fileID: 9179986414727843846, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_Layer

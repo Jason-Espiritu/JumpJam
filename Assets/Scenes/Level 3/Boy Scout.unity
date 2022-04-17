@@ -226,6 +226,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DifficultySelect
       objectReference: {fileID: 0}
+    - target: {fileID: 1845686862594837779, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -111.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941511852236894951, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_text
+      value: 'Time Limit
+
+        33 Sec.'
+      objectReference: {fileID: 0}
     - target: {fileID: 4840259892603620668, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: LevelID
       value: 3
@@ -233,6 +243,24 @@ PrefabInstance:
     - target: {fileID: 4840259892603620668, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: perfectScore
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488030844518265597, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_text
+      value: 'Speed
+
+        90 BPM'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790344037657862678, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_text
+      value: '50
+
+        Collectibles'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985124701871436398, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_text
+      value: '50
+
+        Platforms'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}

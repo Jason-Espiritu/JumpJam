@@ -28,9 +28,8 @@ public class DifficultySelection : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        if (!_isTutorialMode){
-            hardBtn.interactable = false; // set hard mode to false
-        }
+        
+        hardBtn.interactable = false; // set hard mode to false
     }
     public void ShowDiffBox(Action normalModeAction, Action hardModeAction, Action backAction)
     {
@@ -74,7 +73,12 @@ public class DifficultySelection : MonoBehaviour
            {
                stars[i].enabled = true;
            }
-        }else{
+            //Unlocks Hard Mode when Normal tutorial is Finished
+            if (PlayerPrefs.GetInt("NormalTutor?") == 1)
+            {
+                hardBtn.interactable = true;
+            }
+        }else{ //Rest of the Levels
             int starsOnNormal = PlayerPrefs.GetInt("Level_" + LevelID + "-1_Star");
             int highScoreN = PlayerPrefs.GetInt("Level_" + LevelID + "-1_HighScore");
             int highScoreH = PlayerPrefs.GetInt("Level_" + LevelID + "-2_HighScore");

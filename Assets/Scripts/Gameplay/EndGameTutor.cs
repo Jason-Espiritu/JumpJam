@@ -233,7 +233,7 @@ public class EndGameTutor : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("NormalTutor?", 1);
-            Debug.Log("Hard Mode Saved");
+            Debug.Log("Normal Mode Saved");
         }
     }
 }
