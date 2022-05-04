@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player_Script : MonoBehaviour
 {
 
-    [SerializeField] private float _inputRange;
+    private readonly float _inputRangeBeforeBeat = 0.07f;
+    private readonly float _inputRangeAfterBeat = 0.14f;
     [SerializeField] private GameManager GM;
     [SerializeField] private Animator PlayerAnimator;
     [SerializeField] private float _speedMultiplier;
@@ -69,8 +70,8 @@ public class Player_Script : MonoBehaviour
             if (GroundCheck())
             {
                 float TimeofInput = Timer_Global.Instance.g_timer;
-                string jumpNotif = "";
-                if(TimeofInput <= _inputRange || TimeofInput >= GameManager.GMInstance.g_BPS - _inputRange)
+                string jumpNotif;
+                if (TimeofInput <= _inputRangeAfterBeat || TimeofInput >= GameManager.GMInstance.g_BPS - _inputRangeBeforeBeat)
                 {
                         
                     Jump(true);
