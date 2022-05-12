@@ -135,7 +135,7 @@ public class EndGame : MonoBehaviour
     void PrintResult(int timingScore, int collectibleScore, int totalScore)
     {
         LabelTimingScore.text = string.Format("Score x {0:00}", timingScore);
-        LabelCollectibleScore.text = string.Format("Bonus x {0:00}", collectibleScore);
+        LabelCollectibleScore.text = string.Format("Collectibles x {0:00}", collectibleScore);
         LabelTotalScore.text = string.Format("{0:00}", totalScore);
     }
 
