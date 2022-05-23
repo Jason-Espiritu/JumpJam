@@ -75,8 +75,8 @@ public class Player_Script : MonoBehaviour
                 {
                         
                     Jump(true);
-                    Debug.Log("GREAT" + TimeofInput + " : " + GameManager.GMInstance.g_BPS);
-                    jumpNotif = "Great";
+                    Debug.Log("PERFECT" + TimeofInput + " : " + GameManager.GMInstance.g_BPS);
+                    jumpNotif = "Perfect!";
                     AudioManager.instance.PlaySFX(4);
 
                     if (!GM.g_isGameStarted) { GM.g_isGameStarted = true; Timer_Global.Instance.g_timer = 0f; } // Checks if 1st (Start) Jump
@@ -85,7 +85,7 @@ public class Player_Script : MonoBehaviour
                     if (GM.g_isGameStarted)
                     {
                         Point_System.PSinstance.AddBeatValue(true);
-                        jumpNotif += " + 1"; //Add Added Value
+                        //jumpNotif += " + 1"; //Add Added Value
                     }
                 }
                 else
@@ -104,11 +104,11 @@ public class Player_Script : MonoBehaviour
                     Debug.Log("BAD " + TimeofInput + " : " + _middleBPS);
                     
                     //Score
-                    if (GM.g_isGameStarted)
-                    {
-                        Point_System.PSinstance.AddBeatValue(false);
-                        jumpNotif += " - 1"; //Add subtracted Value
-                    }
+                    //if (gm.g_isgamestarted)
+                    //{
+                    //    point_system.psinstance.addbeatvalue(false);
+                    //    jumpnotif += " - 1"; //add subtracted value
+                    //} //Penalty Deduction Removed due to Changes in requirements
 
 
                 }
