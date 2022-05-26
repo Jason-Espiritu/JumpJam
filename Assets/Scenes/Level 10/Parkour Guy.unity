@@ -704,8 +704,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549651036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -280, y: -63, z: -5399.9995}
-  m_LocalScale: {x: 299.09155, y: 299.09155, z: 299.09155}
+  m_LocalPosition: {x: -135, y: 61, z: -5399.9995}
+  m_LocalScale: {x: 361.9008, y: 352.928, z: 299.09155}
   m_Children: []
   m_Father: {fileID: 1525409410}
   m_RootOrder: 3
@@ -769,7 +769,7 @@ SpriteRenderer:
   m_SortingLayerID: -1082345215
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8793639957104055765, guid: 177ae7f0c1a2b864fb0cc40555d87dbe, type: 3}
+  m_Sprite: {fileID: 1618205588740686234, guid: b76d0a2a82b3b544ba9011a8a512ab5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1420,6 +1420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _musicTrack: 10
+  Settings: {fileID: 0}
 --- !u!1 &1584698581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,6 +1969,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1525409410}
     m_Modifications:
+    - target: {fileID: 483796829796761057, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.4300537
+      objectReference: {fileID: 0}
     - target: {fileID: 1748125297141211016, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2068,6 +2073,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -111.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2343729176318491795, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.57995605
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740492563843164353, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.4300537
+      objectReference: {fileID: 0}
     - target: {fileID: 3941511852236894951, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_text
       value: 'Time Limit
@@ -2081,6 +2094,10 @@ PrefabInstance:
     - target: {fileID: 4840259892603620668, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: perfectScore
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105044934702576044, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.4300537
       objectReference: {fileID: 0}
     - target: {fileID: 7488030844518265597, guid: 31a683ee9a44a5f48bc8e5aafbdb16dc, type: 3}
       propertyPath: m_text
