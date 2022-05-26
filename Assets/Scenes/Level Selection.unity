@@ -1296,7 +1296,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1887909727}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.14798535
+  m_Size: 0.14576097
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3017,7 +3017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 210
-    m_Right: 100
+    m_Right: 210
     m_Top: 150
     m_Bottom: 0
   m_ChildAlignment: 3

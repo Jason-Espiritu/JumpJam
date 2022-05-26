@@ -697,7 +697,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230759291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.21, z: 0}
+  m_LocalPosition: {x: 0.459, y: 0.564, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 395202877}
@@ -744,7 +744,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: e8d10a87b28c95f4aac2d5027d649c35, type: 3}
+  m_Sprite: {fileID: 1618205588740686234, guid: b76d0a2a82b3b544ba9011a8a512ab5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1125,7 +1125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.6319997}
+  m_AnchoredPosition: {x: -0.378, y: 1.6319997}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &411958129
@@ -3249,11 +3249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c3644afb1b0a044b55e9e658c03a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPlatforms: 25
-  leftPlatform: {fileID: 7030758227165284859, guid: 9a57880cd47d5ad469a6d0892cd6fe35, type: 3}
-  rightPlatform: {fileID: 6203405148947708217, guid: cebc4bb43103bf44aa77c769a5139b0e, type: 3}
-  finishPlatform: {fileID: 3188592836660430622, guid: 2b282c98f055f17418de88bef4a7108f, type: 3}
-  _nextPlatformSpawnsAt: {x: 0, y: 120}
 --- !u!1001 &1012532171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4193,7 +4188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2012ef08ff3a94ba9f03e64132b0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputRange: 0.06
   GM: {fileID: 370967556}
   PlayerAnimator: {fileID: 230759294}
   _speedMultiplier: 0
