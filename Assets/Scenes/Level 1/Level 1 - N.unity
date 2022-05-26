@@ -1391,6 +1391,7 @@ MonoBehaviour:
   g_normalMode: 1
   g_maxScore: 40
   g_timeLimit: 34
+  g_musicVolume: 0.4
   g_isGameStarted: 0
   g_isGameEnded: 0
   _BPM: 70
@@ -3773,11 +3774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c3644afb1b0a044b55e9e658c03a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPlatforms: 0
-  leftPlatform: {fileID: 0}
-  rightPlatform: {fileID: 0}
-  finishPlatform: {fileID: 0}
-  _nextPlatformSpawnsAt: {x: 0, y: 0}
 --- !u!1 &1010338737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,7 +5123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2012ef08ff3a94ba9f03e64132b0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputRange: 0.08
   GM: {fileID: 370967556}
   PlayerAnimator: {fileID: 230759294}
   _speedMultiplier: 0

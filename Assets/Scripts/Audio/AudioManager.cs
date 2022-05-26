@@ -74,9 +74,10 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void PlayLevelMusic(int MusicID, float _musicOffset)
+    public void PlayLevelMusic(int MusicID, float _musicOffset, float _musicVolume)
     {
-        MusicSource.volume = 1f;
+        if(_musicVolume == 0f) { _musicVolume = 0.8f; } //Check if music Volume don't have value or 0
+        MusicSource.volume = _musicVolume;
         MusicSource.loop = false;
         MusicSource.clip = MusicClips[MusicID];
         MusicSource.time = _musicOffset;

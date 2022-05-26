@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool g_normalMode;
     public int g_maxScore;
     public float g_timeLimit;
+    public float g_musicVolume;
 
     [Header("Game State")]
     public bool g_isGameStarted;
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
         if(!_isMusicAlreadyPlayed){
             if(g_isGameStarted){
                 StartLabel.enabled = false;
-                AudioManager.instance.PlayLevelMusic(_musicID, _musicOffset);
+                AudioManager.instance.PlayLevelMusic(_musicID, _musicOffset, g_musicVolume);
                 _isMusicAlreadyPlayed = true;
                 if (g_GameLevelID == "0"){
                     AudioManager.instance.MusicSource.loop = true;
@@ -91,6 +92,9 @@ public class GameManager : MonoBehaviour
     {
         if(AudioManager.instance.g_valMasterSet == 0.0001f || AudioManager.instance.g_valMusicSet == 0.0001f)
         {
+            //Pause the Whole Game
+            PauseButton.Pause();
+            Time.timeScale = 0f;
             AlertBox.Instance.ShowAlertBox("Music / Master Volume has been set to 0\nPlease set the Master / Music Volume Above 0",
                 () => 
                 {

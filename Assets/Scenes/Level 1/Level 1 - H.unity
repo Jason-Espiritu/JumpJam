@@ -1316,6 +1316,7 @@ MonoBehaviour:
   g_normalMode: 0
   g_maxScore: 40
   g_timeLimit: 34
+  g_musicVolume: 0.4
   g_isGameStarted: 0
   g_isGameEnded: 0
   _BPM: 70
@@ -5134,7 +5135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2012ef08ff3a94ba9f03e64132b0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputRange: 0.08
   GM: {fileID: 370967556}
   PlayerAnimator: {fileID: 230759294}
   _speedMultiplier: 0
