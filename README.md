@@ -1,2 +1,2 @@
 # JumpJam
- A Capstone Project of Pixode
+ A Rhythm Game Capstone Project of Pixode
